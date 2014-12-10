@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ lang }}</title>
+
+  <link href="{{ url_for('static', filename='css/default.css') }}" rel="stylesheet">
+</head>
+<body>
+  <h3>{{ lang }}</h3>
+  <strong><code>{{id}}</code></strong>
+  <div class="code-result">
+    {{ code|safe }}
+  </div>
+</body>
+</html>
