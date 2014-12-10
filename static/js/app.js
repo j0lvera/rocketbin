@@ -59,14 +59,19 @@ app = {
         data: { code: code, lang: s.lang },
         type: 'POST',
         success: function(data) {
-          console.dir(data);
-          console.log("data sended");
+          var status = $.parseJSON(data);
+
+          if (status._id) {
+            location.href = location.href + 'paste/' + status._id;
+          }
         },
         error: function(data) {
           console.dir(data);
           console.log("something happened");        
         }
       });
+    } else {
+      // show an error msg about not leaving blank the textarea
     }
   }
 };

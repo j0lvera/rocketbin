@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 from hashids import Hashids
 import json
 # import jinja2_highlight
@@ -6,12 +6,7 @@ from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
 
-class MyFlaskApp(Flask):
-    jinja_options = dict(Flask.jinja_options)
-    jinja_options.setdefault('extensions',
-        []).append('jinja2_highlight.HighlightExtension')
-
-app = MyFlaskApp(__name__)
+app = Flask(__name__)
 
 SALT = 'iyVnWkuwcGUXq9vggQtY'
 
@@ -52,7 +47,9 @@ def save_paste():
         code = request.form['code']
         lang = request.form['lang']
         pastes.insert({'_id': _id, 'code': code, 'lang': lang })
-        return json.dumps({'success': 200})
+        # return redirect('/paste/' + _id, 301)
+        # return redirect(url_for('show_all'))
+        return json.dumps({'status': 'success', '_id': _id})
     else:
         return json.dumps({'error': 'Invalid request'})
 
