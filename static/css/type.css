@@ -1,0 +1,125 @@
+/*
+ * Type.css
+ * http://modularscale.com/scale/?px1=16&px2=18&ra1=1.618&ra2=0
+ */
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+body {
+  /* line-height: 1.5; */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1em;
+  margin-bottom: 0.354em;
+  font-weight: bold;
+  line-height: 1.125;
+  color: #222;
+  text-rendering: optimizeLegibility; }
+
+h1 {
+  font-size: 2.618em; }
+
+h2 {
+  font-size: 1.82em; }
+
+h3 {
+  font-size: 1.618em; }
+
+h4, h5, h6 {
+  font-size: 1.125em; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+strong {
+  color: #515151; }
+
+nav ul,
+nav ol {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0; }
+
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1em;
+  line-height: 1.5; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin-bottom: 0.5em; }
+
+hr {
+  position: relative;
+  margin: 1.5em 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff; }
+
+abbr {
+  font-weight: bold;
+  font-variant: small-caps;
+  color: #5e5e5e;
+  text-transform: lowercase;
+  letter-spacing: 0.1em; }
+
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #e5e5e5; }
+
+/* pre { */
+/*   margin-left: 1.125em; */
+/*   white-space: pre-wrap; } */
+/*  */
+/* code { */
+/*   color: tomato; */
+/*   font-family: "DejaVu Sans Mono", Inconsolata, Consolas, "Lucida Console", monospace; } */
+
+kbd,
+samp {
+  color: #6a6a6a;
+  font-family: "DejaVu Sans Mono", Inconsolata, Consolas, "Lucida Console", monospace;
+  background-color: #eee; }
+
+samp {
+  padding: 1px 3px; }
+
+kbd {
+  padding: 2px 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px; }
+
+mark {
+  background-color: #fff9d9; }
+
+blockquote {
+  padding: 0.5em 1em;
+  margin: 0.8em 0;
+  color: #919191;
+  border-left: 0.25em solid #eaeaea; }
+  @media (min-width: 30em) {
+    blockquote {
+      padding-right: 5em;
+      padding-left: 1.25em; } }
+
+blockquote p:last-child {
+  margin-bottom: 0; }
+
+figure {
+  margin-left: 0; }
+
+figcaption {
+  font-size: 0.85em;
+  color: #afafaf; }
+
+caption {
+  margin-top: 0.695em;
+  font-size: 0.85em;
+  caption-side: bottom;
+  color: #aaaaaa; }

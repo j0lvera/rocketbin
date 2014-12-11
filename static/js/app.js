@@ -64,7 +64,7 @@ app = {
     if (code != '') {
       $.ajax({
         url: '/paste/save',
-        data: { code: code, lang: s.lang },
+        data: { code: code, lang: s.lang, theme: s.theme },
         type: 'POST',
         success: function(data) {
           var status = $.parseJSON(data);

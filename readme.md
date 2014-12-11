@@ -8,3 +8,4 @@
 - [ ] Add error msg when editor is empty
 - [ ] Create `paste/<id>/edit` route and view
 - [ ] Submission & edit using ajax, rendering result using server render
+- [ ] Save settings on localStorage

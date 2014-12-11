@@ -1,7 +1,8 @@
 {% extends "layout/base.html" %}
 
+{% block title %}Create a new rocketbin{% endblock %}
+
 {% block content %}
-    <h1>Pastebin</h1>
     <div class="form">
       <form id="form-save-code" action="/paste/save" method="POST">
         <div class="options">
@@ -9,30 +10,35 @@
           <select id="language" name="language">
             <option value="html">HTML</option>
             <option value="css">CSS</option>
+            <option value="sass">Sass</option>
+            <option value="scss">Scss</option>
+            <option value="scss">Less</option>
             <option value="javascript">JavaScript</option>
+            <option value="coffee">CoffeeScript</option>
           </select>
 
           <label for="theme">Themes</label>
           <select id="theme" name="theme">
             <option value="monokai">monokai</option>
-            <option value="ambiance">ambiance</option>
-            <option value="chaos">chaos</option>
-            <option value="chrome">chrome</option>
-            <option value="clouds">clouds</option>
-            <option value="clouds_midnight">clouds_midnight</option>
-            <option value="cobalt">cobalt</option>
-            <option value="pastel_on_dark">pastel_on_dark</option>
-            <option value="solarized_dark">solarized_dark</option>
-            <option value="solarized_light">solarized_light</option>
-            <option value="terminal">terminal</option>
-            <option value="textmate">textmate</option>
-            <option value="tomorrow">tomorrow</option>
-            <option value="tomorrow_night">tomorrow_night</option>
-            <option value="tomorrow_night_blue">tomorrow_night_blue</option>
-            <option value="tomorrow_night_bright">tomorrow_night_bright</option>
-            <option value="tomorrow_night_eighties">tomorrow_night_eighties</option>
-            <option value="twilight">twilight</option>
-            <option value="xcode">xcode</option>
+            <option value="github">github</option>
+            {# <option value="ambiance">ambiance</option> #}
+            {# <option value="chaos">chaos</option> #}
+            {# <option value="chrome">chrome</option> #}
+            {# <option value="clouds">clouds</option> #}
+            {# <option value="clouds_midnight">clouds_midnight</option> #}
+            {# <option value="cobalt">cobalt</option> #}
+            {# <option value="pastel_on_dark">pastel_on_dark</option> #}
+            {# <option value="solarized_dark">solarized_dark</option> #}
+            {# <option value="solarized_light">solarized_light</option> #}
+            {# <option value="terminal">terminal</option> #}
+            {# <option value="textmate">textmate</option> #}
+            {# <option value="tomorrow">tomorrow</option> #}
+            {# <option value="tomorrow_night">tomorrow_night</option> #}
+            {# <option value="tomorrow_night_blue">tomorrow_night_blue</option> #}
+            {# <option value="tomorrow_night_bright">tomorrow_night_bright</option> #}
+            {# <option value="tomorrow_night_eighties">tomorrow_night_eighties</option> #}
+            {# <option value="twilight">twilight</option> #}
+            {# <option value="xcode">xcode</option> #}
           </select>
         </div> <!-- .options -->
 

@@ -3,23 +3,49 @@
 <head>
   <meta charset="UTF-8">
   {% block head %}
-    <title>{% block title %}{% endblock %} - Frontbin</title>
+    <title>{% block title %}{% endblock %} - Rocketbin</title>
   {% endblock %}
+		<link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/type.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">new</a></li>
-        <li><a href="/paste/all">all</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="app">{% block content %}{% endblock %}</div> <!-- .app -->  
-  <footer>
-  <p<p>Project by <a href="http://twitter.com/thinkxl">@thinkxl</a></p>
-  </footer>
+		<header>
+			<div class="container">
+				<div class="row">
+					<h1><i class="fa fa-rocket"></i> Rocketbin</h1>
+					<p><em>Pastebin for frontend developers</em></p>
+				</div> <!-- .row -->
+
+				<div class="row">
+					<nav class="main-nav">
+						<ul class="main-nav-list">
+							<li class="main-nav-el"><a href="/">new</a></li>
+							<li class="main-nav-el"><a href="/paste/all">all</a></li>
+						</ul>
+					</nav>
+				</div> <!-- .row -->
+			</div> <!-- .container -->
+		</header>
+
+		<div class="app">
+			<div class="container">
+				<div class="row">
+					{% block content %}{% endblock %}
+				</div> <!-- .row -->
+			</div> <!-- .container -->
+		</div> <!-- .app -->
+
+		<footer class="site-footer">
+			<div class="container">
+				<div class="row">
+					<p>Project by <a href="http://twitter.com/thinkxl">@thinkxl</a></p>
+				</div> <!-- .row -->
+			</div> <!-- .container -->
+		</footer> <!-- .site-footer -->
+	</div> <!-- .container -->
 
   {% block scripts %}{% endblock %}
 </body>

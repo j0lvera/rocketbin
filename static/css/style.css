@@ -1,15 +1,118 @@
+/*
+ * Base 
+ */
+
+body {
+  font-family: Inconsolata, monospace;
+}
+
+pre, 
+code {
+  /* font-family: 'Inconsolata', monospace; */
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 12px;
+  /* line-height: 1; */
+}
+
+/*
+ * Helpers 
+ */
+
+.row { 
+  width: 100%; 
+}
+
+.row&:before,
+.row&:after {
+  content: " "; 
+  display: table; 
+}
+    
+.row&:after {
+  clear: both;
+}
+
+/*
+ * Header 
+ */
+
+header {
+  margin-bottom: 0.618em;
+  display: table;
+  width: 100%;
+}
+
+/*
+ * Navigation 
+ */
+
+.main-nav {
+  margin-bottom: 0.618em;
+  display: table;
+  width: 100%;
+}
+
+.main-nav-el {
+  float: left;
+  margin-right: 0.618em;
+}
+
+.main-nav-el a {
+  padding: 0.218em 1.618em;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+ * Layout 
+ */
+.container {
+  margin: 0 auto;
+  width: 45em;
+}
+
+/*
+ * Editor
+ */
+
 #editor { 
   margin: 1em 0;
-  width: 400px;
-  height: 200px;
+  width: 100%;
+  height: 40em;
 }
+
+/*
+ * Code Results
+ */
 
 .code-result,
 .code-raw-textarea {
   width: 45em;
+}
+
+.code-raw-textarea {
   height: 24em;
 }
 
 .code-raw-textarea {
   resize: none;
+}
+
+/* pygments layout */
+.highlighttable {
+  width: 100%;
+}
+
+/*
+ * Footer 
+ */
+
+.site-footer {
+  margin-top: 1em;
+  padding: 1em;
+}
+
+.site-footer p {
+  margin: 0;
 }

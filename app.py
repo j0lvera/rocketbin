@@ -45,7 +45,8 @@ def save_paste():
         _id = get_new_id()
         code = request.form['code']
         lang = request.form['lang']
-        pastes.insert({'_id': _id, 'code': code, 'lang': lang })
+        theme = request.form['theme']
+        pastes.insert({'_id': _id, 'code': code, 'lang': lang, 'theme': theme })
         # return redirect('/paste/' + _id, 301)
         # return redirect(url_for('show_all'))
         return json.dumps({'status': 'success', '_id': _id})
@@ -56,10 +57,12 @@ def save_paste():
 def show_paste(id=id):
     code = pastes.find_one({'_id': id})['code']
     lang = pastes.find_one({'_id': id})['lang']
+    theme = pastes.find_one({'_id': id})['theme']
     lexer = get_lexer_by_name(lang, stripall=True)
     code_result = highlight(code, lexer, HtmlFormatter(linenos=True))
     code_raw = code
-    return render_template('code.html', code=code_result, code_raw=code_raw, id=id)
+    theme_file = 'css/' + theme + '.css'
+    return render_template('code.html', code=code_result, code_raw=code_raw, id=id, theme_file=theme_file)
 
 # @app.route('/paste/<id>/edit')
 # def edit_paste(id=id):
@@ -71,6 +74,11 @@ def show_all():
     # all_entries = highlight(dumps(pastes.find()), lexer, HtmlFormatter(linenos=True))
     all_entries = pastes.find()
     return render_template('all.html', all=all_entries) 
+
+@app.route('/paste/all/raw')
+def show_raw():
+    all_entries = pastes.find()
+    return dumps(all_entries)
 
 if __name__ == '__main__':
     app.run(debug=True)
