@@ -18,9 +18,9 @@ from bson.json_util import dumps
 # DATABASE_NAME = 'rocketbin'
 # DATABASE_PORT = 27017
 
-DATABASE_HOST = os.getenv('MONGODB_HOST', 'localhost')
-DATABASE_NAME = os.getenv('MONGODB_DATABASE', 'rocketbin') 
-DATABASE_PORT = os.getenv('MONGODB_PORT', 27017)
+DATABASE_HOST = os.environ.get('MONGODB_HOST')
+DATABASE_NAME = os.environ.get('MONGODB_DATABASE')
+DATABASE_PORT = os.environ.get('MONGODB_PORT') 
 
 import pymongo
 from pymongo import Connection
