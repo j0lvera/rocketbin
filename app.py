@@ -14,7 +14,7 @@ from bson import ObjectId
 from bson.json_util import dumps
 
 DATABASE_HOST = 'localhost'
-DATABASE_NAME = 'frontbin'
+DATABASE_NAME = 'rocketbin'
 DATABASE_PORT = 27017
 
 import pymongo
