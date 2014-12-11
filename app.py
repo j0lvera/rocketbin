@@ -20,7 +20,7 @@ from bson.json_util import dumps
 
 DATABASE_HOST = os.environ.get('MONGODB_HOST')
 DATABASE_NAME = os.environ.get('MONGODB_DATABASE')
-DATABASE_PORT = os.environ.get('MONGODB_PORT') 
+DATABASE_PORT = os.environ.get(int('MONGODB_PORT')) 
 
 import pymongo
 from pymongo import Connection
