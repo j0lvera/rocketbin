@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, render_template, redirect, url_for
 from hashids import Hashids
 import json
@@ -81,4 +82,5 @@ def show_raw():
     return dumps(all_entries)
 
 if __name__ == '__main__':
-    app.run()
+    port int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
