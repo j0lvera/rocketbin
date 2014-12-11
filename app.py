@@ -14,8 +14,12 @@ SALT = 'iyVnWkuwcGUXq9vggQtY'
 from bson import ObjectId
 from bson.json_util import dumps
 
-DATABASE_HOST = 'localhost' 
-DATABASE_NAME = 'rocketbin'
+# DATABASE_HOST = 'localhost'
+# DATABASE_NAME = 'rocketbin'
+# DATABASE_PORT = 27017
+
+DATABASE_HOST = '172.17.0.59'
+DATABASE_NAME = 'rocketbin-production'
 DATABASE_PORT = 27017
 
 import pymongo
