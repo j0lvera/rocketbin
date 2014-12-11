@@ -79,6 +79,6 @@ def show_all():
 def show_raw():
     all_entries = pastes.find()
     return dumps(all_entries)
-#
-# if __name__ == '__main__':
-#     app.run()
+
+if __name__ == '__main__':
+    app.run()
