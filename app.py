@@ -69,10 +69,6 @@ def show_paste(id=id):
     theme_file = 'css/' + theme + '.css'
     return render_template('code.html', code=code_result, code_raw=code_raw, id=id, theme_file=theme_file)
 
-# @app.route('/paste/<id>/edit')
-# def edit_paste(id=id):
-#     return None
-
 @app.route('/paste/all')
 def show_all():
     # lexer = get_lexer_by_name('json', stripall=True)
