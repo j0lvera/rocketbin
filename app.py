@@ -8,7 +8,7 @@ from pygments.formatters import HtmlFormatter
 
 app = Flask(__name__)
 
-SALT = 'iyVnWkuwcGUXq9vggQtYssS'
+SALT = 'iyVnWkuwcGUXq9vggQtYssxS'
 
 # Mongo Setup
 from bson import ObjectId
