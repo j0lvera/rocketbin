@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for
 from hashids import Hashids
 import json
-# import jinja2_highlight
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
@@ -29,7 +28,7 @@ pastes = db.pastes
 # Methods 
 
 def get_new_id():
-    hashids = Hashids(salt=SALT, min_length="16") 
+    hashids = Hashids(salt=SALT, min_length="6") 
     id = pastes.find({}).count() + 1
     return hashids.encrypt(id)
 
@@ -59,8 +58,8 @@ def show_paste(id=id):
     lang = pastes.find_one({'_id': id})['lang']
     lexer = get_lexer_by_name(lang, stripall=True)
     code_result = highlight(code, lexer, HtmlFormatter(linenos=True))
-    print code_result
-    return render_template('code.html', code=code_result, id=id)
+    code_raw = code
+    return render_template('code.html', code=code_result, code_raw=code_raw, id=id)
 
 # @app.route('/paste/<id>/edit')
 # def edit_paste(id=id):
@@ -68,8 +67,10 @@ def show_paste(id=id):
 
 @app.route('/paste/all')
 def show_all():
-    print pastes.find()
-    return dumps(pastes.find(), indent=2) 
+    # lexer = get_lexer_by_name('json', stripall=True)
+    # all_entries = highlight(dumps(pastes.find()), lexer, HtmlFormatter(linenos=True))
+    all_entries = pastes.find()
+    return render_template('all.html', all=all_entries) 
 
 if __name__ == '__main__':
     app.run(debug=True)

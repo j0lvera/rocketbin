@@ -1,0 +1,15 @@
+#editor { 
+  margin: 1em 0;
+  width: 400px;
+  height: 200px;
+}
+
+.code-result,
+.code-raw-textarea {
+  width: 45em;
+  height: 24em;
+}
+
+.code-raw-textarea {
+  resize: none;
+}

@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <style type="text/css" media="screen">
-      #editor { 
-        margin: 1em 0;
-        width: 400px;
-        height: 200px;
-      }
-    </style>
-  </head>
-  <body>
+{% extends "layout/base.html" %}
+
+{% block content %}
     <h1>Pastebin</h1>
     <div class="form">
       <form id="form-save-code" action="/paste/save" method="POST">
@@ -51,8 +40,10 @@
         <button type="submit">Submit</button>
       </form>
     </div> <!-- .form -->
+    {% endblock %}
+
+    {% block scripts %}
     <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-  </body>
-</html>
+    {% endblock %}

@@ -10,7 +10,8 @@ app = {
     // UI
     optionLanguage: d.getElementById('language'),
     optionTheme: d.getElementById('theme'),
-    form: d.getElementById('form-save-code') 
+    form: d.getElementById('form-save-code'),
+    btnDelete: $('.btnDelete') 
   },
 
   init: function() {
@@ -47,6 +48,13 @@ app = {
     value = this.value;
     s.theme = value;
     app.setTheme(value);
+  },
+
+  deleteCode: function(e) {
+    e.preventDefault();
+    var $this = $(this);               
+
+    console.log($this);
   },
 
   saveCode: function(e) {

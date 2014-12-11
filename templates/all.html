@@ -1,0 +1,17 @@
+{% extends "layout/base.html" %}
+
+{% block head %}
+    <link href="{{ url_for('static', filename='css/default.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <div class="all">
+    {% for item in all %}
+    <li>{% block loop_item scoped %}<a href="{{ item['_id'] }}">{{ item['_id'] }}</a>{% endblock %} <button class="btnDelete" data-id="{{ item['_id'] }}">Delete</button></li>
+     {% endfor %}
+  </div> <!-- .all -->
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}
