@@ -8,7 +8,7 @@ from pygments.formatters import HtmlFormatter
 
 app = Flask(__name__)
 
-SALT = 'iyVnWkUXq9vggQtYssxS'
+SALT = 'iyVnWkUXq9vggQtYsS'
 
 # Mongo Setup
 from bson import ObjectId
@@ -18,9 +18,9 @@ from bson.json_util import dumps
 # DATABASE_NAME = 'rocketbin'
 # DATABASE_PORT = 27017
 
-DATABASE_HOST = os.environ.get('MONGODB_HOST')
-DATABASE_NAME = os.environ.get('MONGODB_DATABASE')
-DATABASE_PORT = int(os.environ.get('MONGODB_PORT')) 
+DATABASE_HOST = os.getenv('MONGODB_HOST', 'localhost')
+DATABASE_NAME = os.getenv('MONGODB_DATABASE', 'rocketbin')
+DATABASE_PORT = int(os.getenv('MONGODB_PORT', 27017)) 
 
 import pymongo
 from pymongo import Connection
