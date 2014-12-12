@@ -27,7 +27,7 @@ from pymongo import Connection
 
 connection = Connection(DATABASE_HOST, DATABASE_PORT)
 db = connection[DATABASE_NAME]
-db.authenticate(os.getenv('MONGODB_USERNAME'), os.getenv('MONGODB_PASSWORD'))
+db.authenticate(os.getenv('MONGODB_USERNAME'), str(os.getenv('MONGODB_PASSWORD')))
 
 users = db.users
 pastes = db.pastes
