@@ -17,6 +17,7 @@ from bson.json_util import dumps
 # DATABASE_HOST = 'localhost'
 # DATABASE_NAME = 'rocketbin'
 # DATABASE_PORT = 27017
+# DATABASE_PORT = 27017
 
 DATABASE_HOST = os.getenv('MONGODB_HOST', 'localhost')
 DATABASE_NAME = os.getenv('MONGODB_DATABASE', 'rocketbin')
