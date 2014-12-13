@@ -10,7 +10,7 @@ from bson.json_util import dumps
 import pymongo
 from pymongo import Connection
 from flask.ext.login import (LoginManager, UserMixin, AnonymousUserMixin,
-        make_secure_token, current_user, login_user,
+        current_user, login_user,
         logout_user, user_logged_in, user_logged_out,
         user_loaded_from_cookie, user_login_confirmed,
         user_loaded_from_header, user_loaded_from_request,
@@ -23,6 +23,7 @@ from flask.ext.login import (LoginManager, UserMixin, AnonymousUserMixin,
 from flask_wtf import Form
 from wtforms import StringField, TextField, PasswordField
 from wtforms.validators import DataRequired
+from passlib.hash import pbkdf2_sha256, md5_crypt
 
 app = Flask(__name__)
 app.config.from_pyfile('config.cfg')
@@ -85,6 +86,13 @@ def load_user(user_id):
     return User(user['username'], user['password'])
 
 # Methods 
+def pass_hash(password):
+    return pbkdf2_sha256.encrypt(password, rounds=8000, salt_size=16)
+
+def pass_check(username, password):
+    password_hashed = users.find_one({'username': username})['password']
+    return pbkdf2_sha256.verify(password, password_hashed)
+
 def get_new_id(model):
     hashids = Hashids(salt=SALT, min_length="6") 
     id = model.find({}).count() + 1
@@ -103,15 +111,19 @@ def login():
     elif request.method == 'POST' and 'username' in request.form:
         username = request.form['username']
         password = request.form['password']
+        hashed_password = pass_hash(password)
         if form.validate_on_submit():
             if users.find_one({'username': username}):
-                # login and validate the user...
-                user = User(username, password)
-                if login_user(user):
-                    flash('Logged in successfully.')
-                    return redirect(request.args.get('next') or url_for('user_profile'))
-                else: 
-                    flash('Sorry, but you could not log in')
+                if pass_check(username, password):
+                    # login and validate the user...
+                    user = User(username, hashed_password)
+                    if login_user(user):
+                        flash('Logged in successfully.')
+                        return redirect(request.args.get('next') or url_for('user_profile'))
+                    else: 
+                        flash('Sorry, but you could not log in')
+                else:
+                    flash('Wrong Password')
             else:
                 flash('Username doesn\'t exist')
         else:
@@ -126,7 +138,7 @@ def signup():
     elif request.method == 'POST' and 'username' in request.form:
         if form.validate_on_submit():
             username = request.form['username']
-            password = request.form['password']
+            password = pass_hash(request.form['password'])
             if users.find_one({'username': username}):
                 flash('Username already exist')
             else:
