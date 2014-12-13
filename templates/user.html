@@ -1,0 +1,6 @@
+{% extends "layout/base.html" %}
+{% block content %}
+{% if current_user.is_authenticated() %}
+  <p>Hi {{ current_user.username }}!</p>
+{% endif %}
+{% endblock %}
