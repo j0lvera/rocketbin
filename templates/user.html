@@ -1,6 +1,11 @@
 {% extends "layout/base.html" %}
+
 {% block content %}
-{% if current_user.is_authenticated() %}
+	<h2>User Profile</h2>
   <p>Hi {{ current_user.username }}!</p>
-{% endif %}
+  <div class="all">
+    {% for item in user_pastes %}
+    <li>{% block loop_item scoped %}<a href="/paste/{{ item['_id'] }}">{{ item['_id'] }}</a>{% endblock %} </li>
+     {% endfor %}
+  </div> <!-- .all -->
 {% endblock %}

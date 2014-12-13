@@ -163,7 +163,11 @@ def save_paste():
         code = request.form['code']
         lang = request.form['lang']
         theme = request.form['theme']
-        pastes.insert({'_id': _id, 'code': code, 'lang': lang, 'theme': theme })
+        if current_user.is_authenticated():
+            user_id = current_user.get_id()
+            pastes.insert({'_id': _id, 'code': code, 'lang': lang, 'theme': theme, 'user_id':user_id})
+        else:
+            pastes.insert({'_id': _id, 'code': code, 'lang': lang, 'theme': theme, 'user_id':'Anonymous' })
         # return redirect('/paste/' + _id, 301)
         # return redirect(url_for('show_all'))
         return json.dumps({'status': 'success', '_id': _id})
@@ -191,9 +195,11 @@ def show_all():
 def user_profile():
     if current_user.is_authenticated():
         flash('Hello ' + current_user.username)
+        user_id = current_user.get_id()
+        user_pastes = pastes.find({'user_id': user_id})
+        return render_template('user.html', user_pastes=user_pastes)
     else:
         return redirect(url_for('login'))
-    return render_template('user.html')
 
 @app.route('/users/all')
 def show_users():
