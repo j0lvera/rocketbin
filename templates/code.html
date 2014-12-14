@@ -23,6 +23,9 @@
 {% endblock %}
 
 {% block scripts %}
-<script data-isso="//comments.rocketb.in/" src="{{ url_for('static', filename='js/embed.dev.js') }}"></script>
+<script 
+	data-isso="/isso" 
+	data-isso-avatar="true"
+	src="//comments.rocketb.in/js/embed.min.js"></script>
 <section id="isso-thread"></section>
 {% endblock %}
