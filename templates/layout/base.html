@@ -24,6 +24,9 @@
 						<ul class="main-nav-list">
 							<li class="main-nav-el"><a href="/">new</a></li>
 							<li class="main-nav-el"><a href="/paste/all">all</a></li>
+							<li class="main-nav-el"><a href="/login">Login</a></li>
+							<li class="main-nav-el"><a href="/signup">Signup</a></li>
+							<li class="main-nav-el"><a href="/logout">Log out</a></li>
 						</ul>
 					</nav>
 				</div> <!-- .row -->
@@ -32,6 +35,18 @@
 
 		<div class="app">
 			<div class="container">
+				<div class="row">
+					{% with messages = get_flashed_messages() %}
+					  {% if messages %}
+						    <ul class=flashes>
+									{% for message in messages %}
+										<li>{{ message }}</li>
+									{% endfor %}
+								</ul>
+						{% endif %}
+					{% endwith %}
+				</div> <!-- .row -->
+
 				<div class="row">
 					{% block content %}{% endblock %}
 				</div> <!-- .row -->

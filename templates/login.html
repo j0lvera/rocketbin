@@ -1,0 +1,18 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<form method="POST" action="/login">
+  {{ form.hidden_tag() }}
+  <fieldset>
+    {{ form.username.label }} {{ form.username(size=20) }}
+  </fieldset>
+  <fieldset>
+    {{ form.password.label }} {{ form.password(size=20) }}
+  </fieldset>
+  <fieldset>
+    <input type="submit" value="Go">
+  </fieldset>
+</form>
+{% endblock %}
