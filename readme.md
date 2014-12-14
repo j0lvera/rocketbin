@@ -1,7 +1,6 @@
 ## rocketbin v0.1.0 
 
 **a pastebin for web developers**
-**a pastebin for web developers**
 
 ### TODO:
 
