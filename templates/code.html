@@ -23,6 +23,6 @@
 {% endblock %}
 
 {% block scripts %}
-<script data-isso="http://comments.rocketb.in/" src="http://comments.rocketb.in/js/embed.min.js"></script>
+<script data-isso="//comments.rocketb.in/" src="{{ url_for('static', filename='js/embed.min.js') }}"></script>
 <section id="isso-thread"></section>
 {% endblock %}
