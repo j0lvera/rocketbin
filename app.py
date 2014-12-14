@@ -37,7 +37,7 @@ DATABASE_PORT = int(os.getenv('MONGODB_PORT', 27017))
 
 connection = Connection(DATABASE_HOST, DATABASE_PORT)
 db = connection[DATABASE_NAME]
-# db.authenticate(os.getenv('MONGODB_USERNAME'), os.getenv('MONGODB_PASSWORD'))
+db.authenticate(os.getenv('MONGODB_USERNAME'), os.getenv('MONGODB_PASSWORD'))
 
 users = db.users
 pastes = db.pastes
@@ -206,6 +206,6 @@ def show_users():
     return users.find({})
 
 if __name__ == '__main__':
-    # port = int(os.environ.get('PORT', 5000))
-    # app.run(host='0.0.0.0', port=port)
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+    # app.run(debug=True)
