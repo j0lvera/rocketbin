@@ -42,7 +42,7 @@ db.authenticate(os.getenv('MONGODB_USERNAME'), os.getenv('MONGODB_PASSWORD'))
 users = db.users
 pastes = db.pastes
 
-# Classes
+# Classess
 class User(UserMixin):
     def __init__(self, username, password):
         self.username = username
