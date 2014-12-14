@@ -31,8 +31,12 @@ app.config.from_pyfile('config.cfg')
 SALT = 'iyVnWkUXq9vggQi'
 
 # Mongo Setup
-DATABASE_HOST = os.getenv('MONGODB_HOST', 'localhost')
-DATABASE_NAME = os.getenv('MONGODB_DATABASE', 'rocketbin')
+# DATABASE_HOST = os.getenv('MONGODB_HOST', 'localhost')
+# DATABASE_NAME = os.getenv('MONGODB_DATABASE', 'rocketbin')
+# DATABASE_PORT = int(os.getenv('MONGODB_PORT', 27017)) 
+
+DATABASE_HOST = os.getenv('MONGODB_HOST')
+DATABASE_NAME = os.getenv('MONGODB_DATABASE')
 DATABASE_PORT = int(os.getenv('MONGODB_PORT', 27017)) 
 
 connection = Connection(DATABASE_HOST, DATABASE_PORT)
