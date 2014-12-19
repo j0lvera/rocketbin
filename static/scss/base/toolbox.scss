@@ -1,0 +1,18 @@
+// Responsive
+@mixin respond-to($size) {
+	@media only screen and (max-width: $size) { @content; }
+}
+
+@mixin button($background-color, $text-color) {
+	background-color: $background-color;
+	color: $text-color;
+
+	&:hover {
+		background-color: darken($background-color, 15%);
+		color: $text-color;
+	}
+		
+	&:active {
+		background-color: darken($background-color, 12%);
+	}
+}

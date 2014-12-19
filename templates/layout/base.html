@@ -5,18 +5,16 @@
   {% block head %}
     <title>{% block title %}{% endblock %} - Rocketbin</title>
   {% endblock %}
-		<link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/type.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
 <body>
 		<header>
 			<div class="container">
 				<div class="row">
-					<h1><i class="fa fa-rocket"></i> Rocketbin</h1>
-					<p><em>Pastebin for frontend developers</em></p>
+					<h1 class="site-title"><i class="fa fa-rocket"></i> Rocketbin</h1>
+					<p><em>A Stupid Simple Pastebin Clone.</em></p>
 				</div> <!-- .row -->
 
 				<div class="row">
@@ -56,7 +54,7 @@
 		<footer class="site-footer">
 			<div class="container">
 				<div class="row">
-					<p>Project by <a href="http://twitter.com/thinkxl">@thinkxl</a></p>
+					<p>Project by <a href="http://twitter.com/thinkxl">@thinkxl</a> &bullet; <a href="/style-guide">Style Guide</a></p>
 				</div> <!-- .row -->
 			</div> <!-- .container -->
 		</footer> <!-- .site-footer -->

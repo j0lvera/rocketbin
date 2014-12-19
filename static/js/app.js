@@ -5,11 +5,13 @@ var s,
 app = {
   settings: {
     // Defaults
-    lang: "javascript",
-    theme: "monokai",
+    lang: "html",
+    theme: "github",
+    keybinding: "none",
     // UI
     optionLanguage: d.getElementById('language'),
     optionTheme: d.getElementById('theme'),
+    optionKeybinding: d.getElementById('keybinding'),
     form: d.getElementById('form-save-code'),
     btnDelete: $('.btnDelete') 
   },
@@ -26,8 +28,13 @@ app = {
 
   bindUI: function() {
     s.optionLanguage.addEventListener('change', app.changeLang);
-    s.optionTheme.addEventListener('change', app.changeTheme);
+    s.optionKeybinding.addEventListener('change', app.changeKeybinding);
+    // s.optionTheme.addEventListener('change', app.changeTheme);
     s.form.addEventListener('submit', app.saveCode);
+  },
+
+  setKeybinding: function(keybinding) {
+    editor.setKeyboardHandler("ace/keyboard/" + keybinding);              
   },
 
   setLang: function(lang) {
@@ -36,6 +43,12 @@ app = {
 
   setTheme: function(theme) {
     editor.setTheme("ace/theme/" + theme);
+  },
+
+  changeKeybinding: function() {
+    value = this.value;
+    s.keybinding = value;
+    app.setKeybinding(value);
   },
   
   changeLang: function() {

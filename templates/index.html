@@ -6,21 +6,35 @@
     <div class="form">
       <form id="form-save-code" action="/paste/save" method="POST">
         <div class="options">
-          <label for="language">Language</label>
-          <select id="language" name="language">
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="sass">Sass</option>
-            <option value="scss">Scss</option>
-            <option value="scss">Less</option>
-            <option value="javascript">JavaScript</option>
-            <option value="coffee">CoffeeScript</option>
-          </select>
+					<div class="option">
+						<label for="language">Syntax</label>
+						<select id="language" name="language">
+							<option value="html">HTML</option>
+							<option value="css">CSS</option>
+							<option value="sass">Sass</option>
+							<option value="scss">Scss</option>
+							<option value="scss">Less</option>
+							<option value="javascript">JavaScript</option>
+							<option value="coffee">CoffeeScript</option>
+							<option value="python">Python</option>
+							<option value="ruby">Ruby</option>
+							<option value="php">PHP</option>
+						</select>
+					</div> <!-- .option -->
 
-          <label for="theme">Themes</label>
-          <select id="theme" name="theme">
-            <option value="monokai">monokai</option>
-            <option value="github">github</option>
+					<div class="option">
+						<label for="keybinding">Keybinding</label>
+						<select id="keybinding" name="keybinding">
+							<option value="keybinding">None</option>
+							<option value="vim">Vim</option>
+							<option value="emacs">Emacs</option>
+						</select>
+					</div> <!-- .option -->
+
+          {# <label for="theme">Themes</label> #}
+          {# <select id="theme" name="theme"> #}
+          {#   <option value="github">github</option> #}
+          {#   <option value="monokai">monokai</option> #}
             {# <option value="ambiance">ambiance</option> #}
             {# <option value="chaos">chaos</option> #}
             {# <option value="chrome">chrome</option> #}
@@ -39,8 +53,8 @@
             {# <option value="tomorrow_night_eighties">tomorrow_night_eighties</option> #}
             {# <option value="twilight">twilight</option> #}
             {# <option value="xcode">xcode</option> #}
-          </select>
-        </div> <!-- .options -->
+        {#   </select> #}
+        {# </div> <!-- .options --> #}
 
         <div id="editor"></div>
         <button type="submit">Submit</button>

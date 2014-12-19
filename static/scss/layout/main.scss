@@ -1,0 +1,69 @@
+/*
+ * Layout 
+ */
+.container {
+  margin: 0 auto;
+  width: 45em;
+}
+
+/*
+ * Editor
+ */
+
+#editor { 
+  margin: 1em 0;
+  width: 100%;
+  height: 40em;
+}
+
+/*
+ * Options 
+ */
+
+.option {
+	display: inline-block;
+	margin-right: 1em;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+/*
+ * Code Results
+ */
+
+.code-result,
+.code-raw-textarea {
+  width: 45em;
+}
+
+.code-raw-textarea {
+  height: 24em;
+}
+
+.code-raw-textarea {
+  resize: none;
+}
+
+/* pygments layout */
+.highlighttable {
+  width: 100%;
+}
+
+/*
+ * Style Guide 
+ */
+// Presentation styles
+.demo-col {
+	margin-top: 0.618em;
+	display: block;
+	padding: 0.618em 0;
+	border-radius: 3px;
+	background-color: #ccc;
+	text-align: center;
+}
+
+section {
+	margin-bottom: 6em;
+}

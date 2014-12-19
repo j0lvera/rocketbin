@@ -1,0 +1,28 @@
+/*
+ * Base 
+ */
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: lighten(#eee, 10%);
+}
+
+pre, 
+code {
+  /* font-family: 'Inconsolata', monospace; */
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 12px;
+  /* line-height: 1; */
+}
+
+h1, h2, h3, h4, h5 {
+	letter-spacing: 1px;
+}

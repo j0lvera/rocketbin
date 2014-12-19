@@ -31,17 +31,17 @@ app.config.from_pyfile('config.cfg')
 SALT = 'iyVnWkUXq9vggQi'
 
 # Mongo Setup
-# DATABASE_HOST = os.getenv('MONGODB_HOST', 'localhost')
-# DATABASE_NAME = os.getenv('MONGODB_DATABASE', 'rocketbin')
-# DATABASE_PORT = int(os.getenv('MONGODB_PORT', 27017)) 
-
-DATABASE_HOST = os.getenv('MONGODB_HOST')
-DATABASE_NAME = os.getenv('MONGODB_DATABASE')
+DATABASE_HOST = os.getenv('MONGODB_HOST', 'localhost')
+DATABASE_NAME = os.getenv('MONGODB_DATABASE', 'rocketbin')
 DATABASE_PORT = int(os.getenv('MONGODB_PORT', 27017)) 
+
+# DATABASE_HOST = os.getenv('MONGODB_HOST')
+# DATABASE_NAME = os.getenv('MONGODB_DATABASE')
+# DATABASE_PORT = int(os.getenv('MONGODB_PORT', 27017)) 
 
 connection = Connection(DATABASE_HOST, DATABASE_PORT)
 db = connection[DATABASE_NAME]
-db.authenticate(os.getenv('MONGODB_USERNAME'), os.getenv('MONGODB_PASSWORD'))
+# db.authenticate(os.getenv('MONGODB_USERNAME'), os.getenv('MONGODB_PASSWORD'))
 
 users = db.users
 pastes = db.pastes
@@ -209,7 +209,11 @@ def user_profile():
 def show_users():
     return users.find({})
 
+@app.route('/style-guide')
+def show_style_guide():
+    return render_template('style-guide.html')
+
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
-    # app.run(debug=True)
+    # port = int(os.environ.get('PORT', 5000))
+    # app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)

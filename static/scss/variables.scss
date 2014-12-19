@@ -1,0 +1,54 @@
+// General
+$site-width: 65rem;
+$baseline: 1.618rem;
+
+// Grid Variables.
+$column-count: 12;
+$gutter: 3%;
+
+// Typography Variables.
+$site-title-color: #1a237e;
+$page-title-color: #283593;
+$text-color: #333;
+$link-color: #0f82bd;
+$muted-text-color: lighten($text-color, 15%);
+
+$base-font-family: 'PT Sans', sans-serif;
+$base-font-size: 1rem;
+$base-line-height: 1.618;
+$base-margin-bottom: $baseline;
+$measure: 806px;
+
+$headings-margin-bottom: $base-margin-bottom;
+$headings-line-height: 1.125;
+$headings-color: #303f9f;
+
+$code-font-family: 'DejaVu Sans Mono', Inconsolata, Consolas, 'Lucida Console', monospace;
+$code-text-color: brown;
+
+// Button Variables.
+$btn-roundness: 0.236rem;
+
+$btn-small-font-size: 0.618rem;
+$btn-large-font-size: $baseline;
+
+$btn-default-bg: #555;
+$btn-default-text-color: lighten($btn-default-bg, 70%);
+
+$btn-primary-bg: #0078E7;
+$btn-primary-text-color: lighten($btn-primary-bg, 70%);
+
+// Form Variables.
+$field-border-color: #ccc;
+$field-error-color: brown;
+$field-required-color: brown;
+
+// Icon Variables.
+$icon-roundness: 3.778px;
+$icon-border-color: #333;
+
+// Feedback Variables.
+$information-color: #439ccf;
+$error-color: #e72915;
+$warning-color: #d35400;
+$success-color: #74a730;

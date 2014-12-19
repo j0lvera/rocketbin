@@ -1,0 +1,48 @@
+@import "../variables";
+
+[class^="alert-"] {
+	border: 1px solid;
+	border-bottom-width: 3px;
+	margin: 1em 0;
+	padding: 1.125em;
+
+	p {
+		margin: 0;
+	}
+}
+
+.alert-information {
+	border-color: lighten($information-color, 30%);
+	background-color: lighten($information-color, 45%);
+
+	strong {
+		color: $information-color;
+	}
+}
+
+.alert-error {
+	border-color: lighten($error-color, 30%);
+	background-color: lighten($error-color, 45%);
+
+	strong {
+		color: $error-color;
+	}
+}
+
+.alert-warning {
+	border-color: lighten($warning-color, 30%);
+	background-color: lighten($warning-color, 45%);
+
+	strong {
+		color: $warning-color;
+	}
+}
+
+.alert-success {
+	border-color: lighten($success-color, 30%);
+	background-color: lighten($success-color, 45%);
+
+	strong {
+		color: $success-color;
+	}
+}
