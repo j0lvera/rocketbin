@@ -1,0 +1,42 @@
+/*
+ * Titles 
+ */
+
+.site-title {
+	color: $site-title-color;
+}
+
+.page-title {
+	color: $page-title-color;
+}
+
+/*
+ * Header 
+ */
+
+.site-logo {
+	width: 4em;
+	display: inline-block;
+}
+
+header {
+	margin-top: 1em;
+  margin-bottom: 0.618em;
+  display: table;
+  width: 100%;
+}
+
+/*
+ * Navigation 
+ */
+
+.main-nav {
+  margin-bottom: 0.618em;
+  display: table;
+  width: 100%;
+}
+
+.main-nav-el {
+  float: left;
+  margin-right: 0.618em;
+}
