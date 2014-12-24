@@ -7,8 +7,8 @@
 {% block content %}
 	<h2>Latest Public Pastes</h2>
   <div class="all">
-    {% for item in all %}
-    <li>{% block loop_item scoped %}<a href="/paste/{{ item['_id'] }}">{{ item['_id'] }}</a>{% endblock %}</li>
+    {% for item in all[:25] %}
+		<li>{% block loop_item scoped %}<a href="/paste/{{ item['_id'] }}">{{ item['_id'] }}</a> <span>created {{ item['created_at']|datetimeformat }}{% endblock %}</li>
      {% endfor %}
   </div> <!-- .all -->
 {% endblock %}

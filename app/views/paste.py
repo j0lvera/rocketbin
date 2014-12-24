@@ -1,7 +1,10 @@
 import os
 from datetime import datetime
 from flask import Flask, request, render_template, redirect, url_for, Blueprint
+# from jinja2 import Environment
+import jinja2
 import json
+import arrow 
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
@@ -18,6 +21,17 @@ mod = Blueprint('paste', __name__)
 #     'created_at':created_at
 # }
 
+# custom filter
+
+def datetimeformat(value):
+    print value
+    past = arrow.get(value)
+    return past.humanize() 
+
+# jinja_env = Environment()
+# jinja_env.filters['datetimeformat'] = datetimeformat
+jinja2.filters.FILTERS['datetimeformat'] = datetimeformat
+
 @mod.route('/paste/save', methods=['POST'])
 def save_paste():
     error = None
@@ -28,7 +42,7 @@ def save_paste():
         lang = request.form['lang']
         theme = request.form['theme']
         created_at = datetime.utcnow()
-        pastes.insert({'_id':_id, 'code':code, 'lang':lang, 'theme':theme, 'crated_at':created_at })
+        pastes.insert({'_id':_id, 'code':code, 'lang':lang, 'theme':theme, 'created_at':created_at })
         return json.dumps({'status': 'success', '_id': _id})
     else:
         return json.dumps({'error': 'Invalid request'})

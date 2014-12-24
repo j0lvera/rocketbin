@@ -7,7 +7,7 @@ from pymongo import Connection
 
 # Mongo Setup
 DATABASE_HOST = os.getenv('MONGODB_HOST', 'localhost')
-DATABASE_NAME = os.getenv('MONGODB_DATABASE', 'rocketbin')
+DATABASE_NAME = os.getenv('MONGODB_DATABASE', 'rocketbin-test-4')
 DATABASE_PORT = int(os.getenv('MONGODB_PORT', 27017)) 
 
 # DATABASE_HOST = os.getenv('MONGODB_HOST')
