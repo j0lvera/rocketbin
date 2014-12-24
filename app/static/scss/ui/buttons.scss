@@ -18,28 +18,25 @@
 }
 
 button,
-.btn,
-a.btn {
+.btn-default,
+a.btn-default {
 	@extend .button-static;
 	@include button($btn-default-bg, $btn-default-text-color);
 }
 
 
 .btn-primary {
-	@extend .btn;
-
+	@extend .btn-default;
 	@include button($btn-primary-bg, $btn-primary-text-color);
 }
 
 .btn-small {
-	@extend .btn;
-
+	@extend .btn-default;
 	font-size: $btn-small-font-size;
 }
 
 .btn-large {
-	@extend .btn;
-
+	@extend .btn-default;
 	font-size: $btn-large-font-size;
 	font-weight: bold;
 }

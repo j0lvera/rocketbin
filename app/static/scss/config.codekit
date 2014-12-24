@@ -122,7 +122,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/style.scss",
-		"outputAbbreviatedPath": "\/Users\/thinkxl\/Development\/python\/pastebin\/static\/css\/style.css",
+		"outputAbbreviatedPath": "\/Users\/thinkxl\/Development\/python\/pastebin\/app\/static\/css\/style.css",
 		"outputPathIsOutsideProject": 1,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 3,

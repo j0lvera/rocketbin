@@ -17,19 +17,20 @@
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
 <body>
+		<a href="https://github.com/thinkxl/rocketbin"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
 		<header>
 			<div class="container">
 				<div class="row">
 					<img src="{{ url_for('static', filename="img/rocket.png") }}" class="site-logo" role="logo">
-					<h1 class="site-title">Rocketbin</h1>
-					<p><em>A Stupid Simple Pastebin Clone.</em></p>
+					<h1 class="site-title hidden">Rocketbin</h1>
 				</div> <!-- .row -->
 
 				<div class="row">
 					<nav class="main-nav">
 						<ul class="main-nav-list">
-							<li class="main-nav-el"><a class="btn-primary" href="/">new</a></li>
-							<li class="main-nav-el"><a class="btn" href="/paste/all">all</a></li>
+							<li class="main-nav-el"><a class="btn-primary" href="{{ url_for('home.index') }}">New</a></li>
+							<li class="main-nav-el"><a class="btn-default" href="{{ url_for('paste.show_all') }}">Latest Pastes</a></li>
 						</ul>
 					</nav>
 				</div> <!-- .row -->
@@ -59,7 +60,7 @@
 		<footer class="site-footer">
 			<div class="container">
 				<div class="row">
-					<p>Project by <a href="http://twitter.com/thinkxl">@thinkxl</a> &bullet; <a href="/style-guide">Style Guide</a></p>
+					<p>Project by <a href="http://twitter.com/thinkxl">@thinkxl</a> &bullet; <a href="/about">About</a> &bullet; <a href="/style-guide">Style Guide</a></p>
 				</div> <!-- .row -->
 			</div> <!-- .container -->
 		</footer> <!-- .site-footer -->

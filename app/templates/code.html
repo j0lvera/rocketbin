@@ -2,12 +2,11 @@
 {% block title %} id {% endblock %}
 {% block head %}
     {# <link href="{{ url_for('static', filename='css/default.css') }}" rel="stylesheet"> #}
-    {# <link href="{{ url_for('static', filename='css/monokai.css') }}" rel="stylesheet"> #}
-		<link href="{{ url_for('static', filename=theme_file) }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/monokai.css') }}" rel="stylesheet">
+		{# <link href="{{ url_for('static', filename=theme_file) }}" rel="stylesheet"> #}
 {% endblock %}
 {% block content %}
   <h3>{{ lang }}</h3>
-	<strong><code>id: {{ id }}</code></strong>
   <div class="code-result">
     {{ code|safe }}
   </div> <!-- .code-result -->
@@ -23,4 +22,6 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/paste.js') }}"></script>
 {% endblock %}

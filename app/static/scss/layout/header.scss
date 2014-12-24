@@ -1,20 +1,24 @@
 /*
- * Titles 
+ * Header 
  */
 
+%go-inline {
+	display: inline-block;
+}
+
 .site-title {
+	@extend %go-inline;
 	color: $site-title-color;
 }
 
 .page-title {
+	margin: 1.618em auto;
+	text-align: center;
 	color: $page-title-color;
 }
 
-/*
- * Header 
- */
-
 .site-logo {
+	@extend %go-inline;
 	width: 4em;
 	display: inline-block;
 }

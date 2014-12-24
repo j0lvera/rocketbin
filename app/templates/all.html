@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-	<h2>Public Pastes</h2>
+	<h2>Latest Public Pastes</h2>
   <div class="all">
     {% for item in all %}
-    <li>{% block loop_item scoped %}<a href="{{ item['_id'] }}">{{ item['_id'] }}</a>{% endblock %} <button class="btnDelete" data-id="{{ item['_id'] }}">Delete</button></li>
+    <li>{% block loop_item scoped %}<a href="/paste/{{ item['_id'] }}">{{ item['_id'] }}</a>{% endblock %}</li>
      {% endfor %}
   </div> <!-- .all -->
 {% endblock %}

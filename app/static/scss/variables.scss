@@ -29,10 +29,10 @@ $code-text-color: brown;
 // Button Variables.
 $btn-roundness: 0.236rem;
 
-$btn-small-font-size: 0.618rem;
-$btn-large-font-size: $baseline;
+$btn-small-font-size: 0.818rem;
+$btn-large-font-size: 1.318rem;
 
-$btn-default-bg: #555;
+$btn-default-bg: #888;
 $btn-default-text-color: lighten($btn-default-bg, 70%);
 
 $btn-primary-bg: #0078E7;
@@ -52,3 +52,6 @@ $information-color: #439ccf;
 $error-color: #e72915;
 $warning-color: #d35400;
 $success-color: #74a730;
+
+// Editor 
+$editor-top-bar-color: #999;
