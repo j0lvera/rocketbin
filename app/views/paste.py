@@ -39,7 +39,6 @@ def lang_abbr(value):
 
 
 def datetimeformat(value):
-    print value
     past = arrow.get(value)
     return past.humanize() 
 

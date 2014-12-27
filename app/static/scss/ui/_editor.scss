@@ -71,7 +71,8 @@
 }
 
 .linenos {
-	padding: 0 2px 0 12px;
+	// padding: 0 2px 0 12px;
+	width: 2em;
 	text-align: center;
 	@extend .linenos-light;
 }
