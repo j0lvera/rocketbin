@@ -1,0 +1,40 @@
+/*
+ * Footer 
+ */
+
+.tilt-container {
+	top: -2em;
+	left: -5px;
+	position: relative;
+	display: block;
+	height: 3em;
+	background-color: #eee;
+	transform: rotate(2deg);
+	box-shadow: 0 -10px 0 0 #eee;
+}
+
+.site-footer {
+	position: relative;
+	top: -2em;
+	background-color: #eee;
+}
+
+.site-footer p {
+  margin: 0;
+	color: #999;
+}
+
+.site-footer {
+	position: relative;
+	text-align: right;
+}
+
+.footer-logo {
+	position: absolute;
+	top: -1em;
+	left: 3em;
+	width: 5em;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+}

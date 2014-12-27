@@ -100,6 +100,18 @@ p {
 }
 
 /*
+ * Anchor links 
+ */
+
+a {
+	color: $link-color;
+
+	&:hover {
+		color: darken($link-color, 10%);
+	}
+}
+
+/*
  * Lists
  *
  * Most `ul` inside a `nav` element doesn't need the list styling

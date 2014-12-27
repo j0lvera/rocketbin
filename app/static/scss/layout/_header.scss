@@ -8,26 +8,28 @@
 
 .site-title {
 	@extend %go-inline;
-	color: $site-title-color;
 }
 
 .page-title {
 	margin: 1.618em auto;
 	text-align: center;
-	color: $page-title-color;
 }
 
 .site-logo {
 	@extend %go-inline;
-	width: 4em;
+	width: 2em;
 	display: inline-block;
 }
 
-header {
-	margin-top: 1em;
-  margin-bottom: 0.618em;
+.masthead {
   display: table;
   width: 100%;
+	border-top: 4px solid $color-red;
+	background-color: #fff;
+}
+
+.heading {
+	color: darken($color-green, 30%);
 }
 
 /*
@@ -35,7 +37,7 @@ header {
  */
 
 .main-nav {
-  margin-bottom: 0.618em;
+  margin-bottom: 0;
   display: table;
   width: 100%;
 }

@@ -1,6 +1,12 @@
+// Colors
+$color-red: #e74c3c;
+$color-green: #5FBCA8;
+
 // General
 $site-width: 65rem;
 $baseline: 1.618rem;
+// $body-background-color: #323753;
+$body-background-color: #eee;
 
 // Grid Variables.
 $column-count: 12;
@@ -10,18 +16,19 @@ $gutter: 3%;
 $site-title-color: #1a237e;
 $page-title-color: #283593;
 $text-color: #333;
-$link-color: #0f82bd;
+$link-color: #555;
 $muted-text-color: lighten($text-color, 15%);
 
-$base-font-family: 'PT Sans', sans-serif;
-$base-font-size: 1rem;
+$headings-font-family: 'Source Sans Pro', sans-serif;
+$base-font-family: 'Droid Sans', sans-serif;
+$base-font-size: 18px;
 $base-line-height: 1.618;
 $base-margin-bottom: $baseline;
 $measure: 806px;
 
 $headings-margin-bottom: $base-margin-bottom;
 $headings-line-height: 1.125;
-$headings-color: #303f9f;
+$headings-color: #333;
 
 $code-font-family: 'DejaVu Sans Mono', Inconsolata, Consolas, 'Lucida Console', monospace;
 $code-text-color: brown;
@@ -32,10 +39,14 @@ $btn-roundness: 0.236rem;
 $btn-small-font-size: 0.818rem;
 $btn-large-font-size: 1.318rem;
 
-$btn-default-bg: #888;
-$btn-default-text-color: lighten($btn-default-bg, 70%);
+$btn-default-bg: #3498db;
+$btn-default-top-color: #ff512f;
+$btn-default-bottom-color: #f09819;
+$btn-default-text-color: #fff;
 
-$btn-primary-bg: #0078E7;
+$btn-primary-top-color: #aa076b;
+$btn-primary-bottom-color: #61045f;
+$btn-primary-bg: #2ecc71;
 $btn-primary-text-color: lighten($btn-primary-bg, 70%);
 
 // Form Variables.
@@ -55,3 +66,4 @@ $success-color: #74a730;
 
 // Editor 
 $editor-top-bar-color: #999;
+

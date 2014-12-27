@@ -23,6 +23,21 @@ mod = Blueprint('paste', __name__)
 
 # custom filter
 
+def lang_abbr(value):
+    lang = value.capitalize()
+    # Fixing naming, like "Javascript" to "JavaScript" and "Html" to "HTML"
+    # should use case instead though
+    if lang == "Javascript":
+        lang = "JavaScript"
+    elif lang == "Html":
+        lang = "HTML"
+    elif lang == "Css":
+        lang = "CSS"
+    elif lang == "Php":
+         lang = "PHP"
+    return lang
+
+
 def datetimeformat(value):
     print value
     past = arrow.get(value)
@@ -31,11 +46,12 @@ def datetimeformat(value):
 # jinja_env = Environment()
 # jinja_env.filters['datetimeformat'] = datetimeformat
 jinja2.filters.FILTERS['datetimeformat'] = datetimeformat
+jinja2.filters.FILTERS['lang_abbr'] = lang_abbr 
 
 @mod.route('/paste/save', methods=['POST'])
 def save_paste():
     error = None
-    print request
+    print request.form
     if request.method == 'POST':
         _id = gen_new_id(pastes)
         code = request.form['code']
@@ -51,22 +67,13 @@ def save_paste():
 @mod.route('/paste/<id>')
 def show_paste(id=id):
     code = pastes.find_one({'_id': id})['code']
-    lang = pastes.find_one({'_id': id})['lang'].capitalize()
-    # Fixing naming, like "Javascript" to "JavaScript" and "Html" to "HTML"
-    # should use case instead though
-    if lang == "Javascript":
-        lang = "JavaScript"
-    elif lang == "Html":
-        lang = "HTML"
-    elif lang == "Css":
-        lang = "CSS"
-    elif lang == "Php":
-        lang = "PHP"
+    lang = pastes.find_one({'_id': id})['lang']
     theme = pastes.find_one({'_id': id})['theme']
     lexer = get_lexer_by_name(lang, stripall=True)
     code_result = highlight(code, lexer, HtmlFormatter(linenos=True))
     code_raw = code
     theme_file = 'css/' + theme + '.css'
+    print theme_file
     return render_template('code.html', code=code_result, code_raw=code_raw.strip(), id=id, theme_file=theme_file, lang=lang)
 
 

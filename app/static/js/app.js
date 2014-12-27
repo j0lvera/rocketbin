@@ -7,7 +7,8 @@
     settings: {
       // Defaults
       lang: localStorage.getItem("rocketbin-language") || "html",
-      theme: localStorage.getItem("rocketbin-theme") || "monokai",
+      // theme: localStorage.getItem("rocketbin-theme") || "github",
+      theme: "github",
       keybinding: localStorage.getItem("rocketbin-keybinding") || "keybinding",
       // UI
       optionLanguage: d.getElementById('language'),
@@ -80,7 +81,6 @@
     setTheme: function(theme) {
       editor.setTheme("ace/theme/" + theme);
       app.editorFocus();
-      app.saveSetting("rocketbin-theme", theme);
     },
 
     // http://stackoverflow.com/questions/7050931/how-to-set-focus-on-the-ace-editor

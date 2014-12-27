@@ -4,6 +4,7 @@
 
 html {
 	box-sizing: border-box;
+	background-color: #eee;
 }
 
 *, *:before, *:after {
@@ -11,8 +12,11 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  background-color: lighten(#eee, 10%);
+  font-family: $base-font-family;
+  background-color: $body-background-color;
+	color: $text-color;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 
 pre,
@@ -28,9 +32,12 @@ code,
   // font-family: 'Ubuntu Mono', monospace !important;
   // font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
   font-size: 13px !important;
+	-webkit-font-smoothing: auto;
   /* line-height: 1; */
 }
 
 h1, h2, h3, h4, h5 {
-	letter-spacing: 1px;
+	font-family: $headings-font-family;
+	// font-weight: 900;
+	color: $headings-color;
 }

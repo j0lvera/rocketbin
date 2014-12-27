@@ -19,52 +19,46 @@
 <body>
 		<a href="https://github.com/thinkxl/rocketbin"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
-		<header>
+		<header class="masthead section">
 			<div class="container">
 				<div class="row">
-					<img src="{{ url_for('static', filename="img/rocket.png") }}" class="site-logo" role="logo">
-					<h1 class="site-title hidden">Rocketbin</h1>
+					{# <a href="{{ url_for('home.index') }}"><img src="{{ url_for('static', filename="img/rocket.png") }}" class="site-logo" role="logo"></a> #}
+					{# <h1 class="site-title hidden">Rocketbin</h1> #}
 				</div> <!-- .row -->
 
 				<div class="row">
 					<nav class="main-nav">
 						<ul class="main-nav-list">
-							<li class="main-nav-el"><a class="btn-primary" href="{{ url_for('home.index') }}">New</a></li>
-							<li class="main-nav-el"><a class="btn-default" href="{{ url_for('paste.show_all') }}">Latest Pastes</a></li>
+							<li class="main-nav-el"><a class="btn-default" href="{{ url_for('home.index') }}"><i class="fa fa-plus"> Create New</i></a></li>
+							<li class="main-nav-el"><a class="btn-default" href="{{ url_for('paste.show_all') }}"><i class="fa fa-list"></i> Latest Pastes</a></li>
 						</ul>
 					</nav>
 				</div> <!-- .row -->
 			</div> <!-- .container -->
 		</header>
 
-		<div class="app">
+		<div class="app section">
 			<div class="container">
 				<div class="row">
-					{% with messages = get_flashed_messages() %}
-					  {% if messages %}
-						    <ul class=flashes>
-									{% for message in messages %}
-										<li>{{ message }}</li>
-									{% endfor %}
-								</ul>
-						{% endif %}
-					{% endwith %}
-				</div> <!-- .row -->
-
-				<div class="row">
 					{% block content %}{% endblock %}
-				</div> <!-- .row -->
+				</div>  <!-- .row -->
 			</div> <!-- .container -->
 		</div> <!-- .app -->
 
-		<footer class="site-footer">
+		<div class="tilt-container">
+		</div> <!-- .tilt-container -->
+
+		<footer class="site-footer section">
 			<div class="container">
+				<div class="footer-logo-container">
+					<a href="{{ url_for('home.index') }}"><img src="{{ url_for('static', filename="img/rocket.png") }}" class="footer-logo" role="logo"></a>
+				</div> <!-- .footer-logo -->
+
 				<div class="row">
 					<p>Project by <a href="http://twitter.com/thinkxl">@thinkxl</a> &bullet; <a href="/about">About</a> &bullet; <a href="/style-guide">Style Guide</a></p>
 				</div> <!-- .row -->
 			</div> <!-- .container -->
 		</footer> <!-- .site-footer -->
-	</div> <!-- .container -->
 
   {% block scripts %}{% endblock %}
 </body>

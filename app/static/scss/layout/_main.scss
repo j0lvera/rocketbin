@@ -1,9 +1,38 @@
 /*
  * Layout 
  */
+
 .container {
   margin: 0 auto;
   width: 45em;
+}
+
+.section {
+	margin-bottom: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	&:last-child {
+		margin-top: 0;
+	}
+}
+
+/*
+ * App 
+ */
+
+.app {
+	padding-bottom: 4em;
+	background-color: $color-green;
+	color: #fff;
+
+	hr {
+		border-color: lighten($color-green, 5%);
+	}
+
+	a {
+		color: darken($color-green, 40%);
+	}
 }
 
 /*
@@ -46,6 +75,23 @@
   resize: none;
 }
 
+/*
+ * Pastes list 
+ */
+
+.pastes-list {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.paste-list-el {
+	.paste-link {
+		margin-right: 0.618em;
+		font-family: 'Source Code Pro', monospace;
+	}
+}
+
 /* pygments layout */
 .highlighttable {
   width: 100%;
@@ -54,6 +100,7 @@
 /*
  * Style Guide 
  */
+
 // Presentation styles
 .demo-col {
 	margin-top: 0.618em;
