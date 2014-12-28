@@ -1,5 +1,7 @@
 {% extends "layout/base.html" %}
 
+{% block title %}Latest Pastes{% endblock %}
+
 {% block head %}
     <link href="{{ url_for('static', filename='css/default.css') }}" rel="stylesheet">
 {% endblock %}
@@ -13,8 +15,4 @@
 			{% endfor %}
 		</ul> <!-- .pastes-list -->
   </div> <!-- .all -->
-{% endblock %}
-
-{% block scripts %}
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 {% endblock %}

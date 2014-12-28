@@ -73,10 +73,10 @@ def show_paste(id=id):
     code_raw = code
     theme_file = 'css/' + theme + '.css'
     print theme_file
-    return render_template('code.html', code=code_result, code_raw=code_raw.strip(), id=id, theme_file=theme_file, lang=lang)
+    return render_template('paste.html', code=code_result, code_raw=code_raw.strip(), id=id, theme_file=theme_file, lang=lang)
 
 
 @mod.route('/pastes')
 def show_all():
     all_entries = pastes.find({})
-    return render_template('all.html', all=all_entries) 
+    return render_template('pastes.html', all=all_entries) 
