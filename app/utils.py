@@ -1,6 +1,7 @@
+import os
 from hashids import Hashids
 
-SALT = '5Qz90Ucr90IrKNlokAXE2FunsZrFqYnTP1k9wxbyoLfnFRgvgKMY3f08Ra'
+SALT = os.getenv('SALT', '5Qz90Ucr90IrKNlokAXE2FunsZrFqYnTP1k9wxbyoLfnFRgvgKMY3f08Ra')
 
 # Methods 
 def gen_new_id(model):
