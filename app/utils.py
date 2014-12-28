@@ -1,7 +1,6 @@
 from hashids import Hashids
-from passlib.hash import pbkdf2_sha256, md5_crypt
 
-SALT = "dev-salt"
+SALT = '5Qz90Ucr90IrKNlokAXE2FunsZrFqYnTP1k9wxbyoLfnFRgvgKMY3f08Ra'
 
 # Methods 
 def gen_new_id(model):

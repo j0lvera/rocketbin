@@ -1,7 +1,8 @@
 from flask import Flask, g, render_template, abort
 
-app = Flask(__name__)
-app.config.from_object('appconfig')
+app = Flask(__name__, instance_relative_config=True)
+app.config.from_object('config')
+app.config.from_pyfile('config.py')
 
 
 @app.errorhandler(403)

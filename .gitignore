@@ -1,5 +1,7 @@
 venv
+instance
 *~
 *.swp
 *.sh
 .DS_Store
+*.pyc

@@ -10,7 +10,6 @@ arrow==0.4.4
 enum34==1.0.4
 hashids==1.0.1
 itsdangerous==0.24
-passlib==1.6.2
 pathlib==1.0.1
 pymongo==2.7.2
 python-dateutil==2.3

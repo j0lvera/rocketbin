@@ -8,6 +8,7 @@
 
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale-1">
+		<meta name="google-site-verification" content="P00qjUD0mle_f4y6gOveBx5KjkHYmPitsWOk5pt5WSs">
 
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
@@ -23,7 +24,7 @@
 			<div class="container">
 				<div class="row">
 					{# <a href="{{ url_for('home.index') }}"><img src="{{ url_for('static', filename="img/rocket.png") }}" class="site-logo" role="logo"></a> #}
-					{# <h1 class="site-title hidden">Rocketbin</h1> #}
+					<h1 class="site-title hidden">Rocketbin</h1>
 				</div> <!-- .row -->
 
 				<div class="row">
@@ -55,11 +56,20 @@
 				</div> <!-- .footer-logo -->
 
 				<div class="row">
-					<p>Project by <a href="http://twitter.com/thinkxl">@thinkxl</a> &bullet; <a href="/about">About</a> &bullet; <a href="/style-guide">Style Guide</a></p>
+					<p>Project by <a href="http://twitter.com/thinkxl">@thinkxl</a> &bullet; <a href="/about">About</a></p>
 				</div> <!-- .row -->
 			</div> <!-- .container -->
 		</footer> <!-- .site-footer -->
 
-  {% block scripts %}{% endblock %}
+	{% block scripts %}{% endblock %}
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-58002267-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>
