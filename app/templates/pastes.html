@@ -10,8 +10,7 @@
 	<h2 class="heading">Latest Public Pastes</h2>
   <div class="all">
 		<ul class="pastes-list">
-			{# {% for item in all[:15]|sort(attribute='created_at', reverse=True) %} #}
-			{% for item in all[:15] %}
+			{% for item in all %}
 			<li class="paste-list-el">{% block loop_item scoped %}<a class="paste-link" href="/paste/{{ item['_id'] }}">{{ item['_id'] }}</a> <span><strong>{{ item['lang']|lang_abbr }}</strong> paste created {{ item['created_at']|datetimeformat }}{% endblock %}</li>
 			{% endfor %}
 		</ul> <!-- .pastes-list -->
