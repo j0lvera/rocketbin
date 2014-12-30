@@ -78,5 +78,5 @@ def show_paste(id=id):
 
 @mod.route('/pastes')
 def show_all():
-    all_entries = pastes.find({})
+    all_entries = pastes.find({}).limit(25).sort('created_at', -1)
     return render_template('pastes.html', all=all_entries) 
