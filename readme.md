@@ -1,6 +1,6 @@
 ## Rocketbin v0.1.1 
 
-**A Flask Pastebin clone**
+**An Open Source Flask Pastebin clone**
 
 This is my first Flask and Python project, probably you will see a lot of stuff that is not a "best practice".
 
