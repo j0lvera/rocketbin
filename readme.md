@@ -1,4 +1,4 @@
-## rocketbin v0.1.1 
+## Rocketbin v0.1.1 
 
 **A Flask Pastebin clone**
 
