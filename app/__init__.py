@@ -3,7 +3,6 @@ from flask import Flask, g, render_template, abort
 app = Flask(__name__)
 app.config.from_object('config')
 
-
 @app.errorhandler(403)
 def forbidden_page(error):
     return render_template('403.html'), 403

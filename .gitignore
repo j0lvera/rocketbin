@@ -1,7 +1,8 @@
+.DS_Store
 venv
 instance
 *~
 *.swp
 *.sh
-.DS_Store
 *.pyc
+config.py
