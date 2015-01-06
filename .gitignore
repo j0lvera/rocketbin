@@ -4,3 +4,4 @@ venv
 *.swp
 *.sh
 *.pyc
+config.example.py
