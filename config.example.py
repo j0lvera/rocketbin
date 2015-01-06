@@ -1,3 +1,6 @@
+# You will need to rename this file to `config.py`
+# example: `mv config.example.py config.py`
+
 import os
 
 DEBUG=True

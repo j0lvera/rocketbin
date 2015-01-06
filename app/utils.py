@@ -1,9 +1,10 @@
 import os
+from app import app
 from hashids import Hashids
 
-SALT = os.getenv('SALT', '5Qz90Ucr90IrKNlokAXE2FunsZrFqYnTP1k9wxbyoLfnFRgvgKMY3f08Ra')
 
-# Methods 
+SALT = app.config['SALT']
+
 def gen_new_id(model):
     if model.find({}):
         hashids = Hashids(salt=SALT, min_length="6") 
