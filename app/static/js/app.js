@@ -7,7 +7,6 @@
     settings: {
       // Defaults
       lang: localStorage.getItem("rocketbin-language") || "html",
-      // theme: localStorage.getItem("rocketbin-theme") || "github",
       theme: "github",
       keybinding: localStorage.getItem("rocketbin-keybinding") || "keybinding",
       // UI
@@ -119,7 +118,11 @@
       if (code != '') {
         $.ajax({
           url: '/paste/save',
-          data: { code: code, lang: s.lang, theme: s.theme },
+          data: { 
+            code: code, 
+            lang: s.lang, 
+            theme: s.theme 
+          },
           type: 'POST',
           success: function(data) {
             var status = $.parseJSON(data);

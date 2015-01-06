@@ -13,20 +13,13 @@ from app.database import pastes
 
 mod = Blueprint('paste', __name__)
 
-# {
-#     '_id': _id, 
-#     'code':code, 
-#     'lang':lang, 
-#     'theme':theme, 
-#     'created_at':created_at
-# }
+# Custom filters
 
-# custom filter
-
+# This function fixes the naming of the languages
 def lang_abbr(value):
+    """Return "JavaScript" if `value` is "javascript" \
+            and "HTML" if value is "Html" """
     lang = value.capitalize()
-    # Fixing naming, like "Javascript" to "JavaScript" and "Html" to "HTML"
-    # should use case instead though
     if lang == "Javascript":
         lang = "JavaScript"
     elif lang == "Html":
@@ -49,15 +42,14 @@ jinja2.filters.FILTERS['lang_abbr'] = lang_abbr
 
 @mod.route('/paste/save', methods=['POST'])
 def save_paste():
-    error = None
-    print request.form
     if request.method == 'POST':
         _id = gen_new_id(pastes)
         code = request.form['code']
         lang = request.form['lang']
         theme = request.form['theme']
         created_at = datetime.utcnow()
-        pastes.insert({'_id':_id, 'code':code, 'lang':lang, 'theme':theme, 'created_at':created_at })
+        pastes.insert({'_id':_id, 'code':code, 'lang':lang, 'theme':theme, \
+                'created_at':created_at })
         return json.dumps({'status': 'success', '_id': _id})
     else:
         return json.dumps({'error': 'Invalid request'})
@@ -65,15 +57,16 @@ def save_paste():
 
 @mod.route('/paste/<id>')
 def show_paste(id=id):
-    code = pastes.find_one({'_id': id})['code']
-    lang = pastes.find_one({'_id': id})['lang']
-    theme = pastes.find_one({'_id': id})['theme']
-    lexer = get_lexer_by_name(lang, stripall=True)
-    code_result = highlight(code, lexer, HtmlFormatter(linenos=True))
-    code_raw = code
-    theme_file = 'css/' + theme + '.css'
+    paste = pastes.find_one({'_id':id})
+    lexer = get_lexer_by_name(paste['lang'], stripall=True)
+    code_result = highlight(paste['code'], lexer, \
+            HtmlFormatter(linenos=True))
+    code_raw = paste['code'] 
+    theme_file = 'css/' + paste['theme'] + '.css'
     print theme_file
-    return render_template('paste.html', code=code_result, code_raw=code_raw.strip(), id=id, theme_file=theme_file, lang=lang)
+    return render_template('paste.html', code=code_result, \
+            code_raw=code_raw.strip(), id=id, theme_file=theme_file, \
+            lang=paste['lang'])
 
 
 @mod.route('/pastes')
