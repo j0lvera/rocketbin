@@ -2,17 +2,14 @@ import os
 from app import app
 from pymongo import MongoClient 
 
+db_client = MongoClient(
+        app.config['MONGODB_HOSTNAME'], 
+        app.config['MONGODB_PORT']
+)
+db = db_client[app.config['MONGODB_NAME']]
 
-DATABASE_HOST = os.getenv('MONGODB_HOST', app.config['MONGODB_HOSTNAME'])
-DATABASE_NAME = os.getenv('MONGODB_DATABASE', app.config['MONGODB_NAME'])
-DATABASE_PORT = int(os.getenv('MONGODB_PORT', app.config['MONGODB_PORT'])) 
-
-
-db_client = MongoClient(DATABASE_HOST, DATABASE_PORT)
-db = db_client[DATABASE_NAME]
-
-if os.getenv('MONGODB_USERNAME'):
-    db.authenticate(os.getenv('MONGODB_USERNAME'), os.getenv('MONGODB_PASSWORD'))
+if app.config['MONGODB_USERNAME']:
+    db.authenticate(app.config['MONGODB_USERNAME'], app.config['MONGODB_PASSWORD'])
 
 pastes = db.pastes
 
