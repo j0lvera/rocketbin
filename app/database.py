@@ -7,13 +7,13 @@ db_client = MongoClient(
         app.config['MONGODB_PORT']
 )
 
+db = db_client[app.config['MONGODB_NAME']]
+
 if app.config['MONGODB_USERNAME']:
     db.authenticate(
             app.config['MONGODB_USERNAME'], 
             app.config['MONGODB_PASSWORD']
     )
-
-db = db_client[app.config['MONGODB_NAME']]
 
 pastes = db.pastes
 
