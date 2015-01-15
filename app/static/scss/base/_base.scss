@@ -1,7 +1,3 @@
-/*
- * Base 
- */
-
 html {
 	box-sizing: border-box;
 	background-color: #eee;
@@ -22,15 +18,7 @@ body {
 pre,
 code,
 .ace_editor {
-  // font-family: 'Inconsolata', monospace !important;
-  // font-family: 'Droid Sans Mono', monospace !important;
   font-family: 'Source Code Pro', 'source-code-pro', monospace !important;
-  // font-family: 'Consolas', monospace !important;
-  // font-family: 'Cousine', monospace !important;
-  // font-family: 'Inconsolata', monospace !important;
-  // font-family: 'Anonymous Pro', monospace !important;
-  // font-family: 'Ubuntu Mono', monospace !important;
-  // font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
   font-size: 13px !important;
 	-webkit-font-smoothing: auto;
   /* line-height: 1; */
@@ -38,6 +26,14 @@ code,
 
 h1, h2, h3, h4, h5 {
 	font-family: $headings-font-family;
-	// font-weight: 900;
 	color: $headings-color;
+}
+
+/* Text that is inside the `.app` class, because the green background */
+.app {
+	color: $app-text-color;
+
+	h1, h2, h3, h4 {
+		color: $app-headings-color;
+	}
 }

@@ -13,7 +13,7 @@
       optionLanguage: d.getElementById('language'),
       optionTheme: d.getElementById('theme'),
       optionKeybinding: d.getElementById('keybinding'),
-      form: d.getElementById('form-save-code'),
+      form: d.getElementsByClassName('editor-form')[0],
       btnDelete: $('.btnDelete') 
     },
 

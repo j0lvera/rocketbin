@@ -3,8 +3,8 @@
 {% block title %}Create a new paste{% endblock %}
 
 {% block content %}
-    <div class="form">
-      <form id="form-save-code" action="/paste/save" method="POST">
+    <div class="editor-form-container">
+      <form class="editor-form" action="/paste/save" method="POST">
         <div class="options">
 					<div class="option">
 						<label for="language">Syntax</label>
@@ -33,7 +33,7 @@
         </div> <!-- .options -->
 
         <div id="editor"></div>
-        <button class="btn-primary" type="submit">Submit</button>
+        <button class="btn-ghost" type="submit">Submit</button>
       </form>
     </div> <!-- .form -->
     {% endblock %}

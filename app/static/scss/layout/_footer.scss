@@ -1,7 +1,4 @@
-/*
- * Footer 
- */
-
+/* Footer */
 .tilt-container {
 	top: -2em;
 	left: -5px;
@@ -17,11 +14,15 @@
 	position: relative;
 	top: -2em;
 	background-color: #eee;
-}
 
-.site-footer p {
-  margin: 0;
-	color: #999;
+	p {
+		margin: 0;
+		color: #999;
+	}
+
+	a {
+		color: #555;
+	}
 }
 
 .site-footer {

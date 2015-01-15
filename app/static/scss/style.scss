@@ -1,16 +1,68 @@
-@import "variables";
+/*
+ *
+ *    _______  ____/ /_____ / /_/ /  (_)__ 
+ *   / __/ _ \/ __/  '_/ -_' __/ _ \/ / _ \
+ *	/_/  \___/\__/_/\_\\__/\__/_.__/_/_//_/
+ *
+ * Designed, built, and released under GPL license by @thinkxl.
+ * https://github.com/thinkxl/rocketbin
+ */
+
+/*
+ * Contents
+ * 
+ * Vendors
+ * Utils
+ * Base 
+ * Components 
+ * Layouts 
+ * Pages
+ */
+
+/* 
+ * Vendors
+ */
+
 @import "vendors/normalize";
 @import "vendors/hyx";
-@import "typography/type";
-@import "base/colors";
+
+/* 
+ * Utils
+ */
+
+@import "utils/variables";
+@import "utils/toolbox";
+
+/* 
+ * Base
+ */
+
+@import "base/typography";
 @import "base/base";
-@import "base/grid";
-@import "base/toolbox";
+
+/* 
+ * Components
+ */
+
+@import "components/alerts";
+@import "components/buttons";
+@import "components/forms";
+@import "components/editor";
+@import "components/comments";
+
+/* 
+ * Layouts
+ */
+
+@import "layout/grid";
 @import "layout/header";
 @import "layout/main";
 @import "layout/footer";
-@import "layout/comments";
-@import "ui/alerts";
-@import "ui/buttons";
-@import "ui/forms";
-@import "ui/editor";
+
+/* 
+ * Pages
+ */
+
+@import "pages/style-guide";
+@import "pages/code-result";
+@import "pages/latest-pastes";

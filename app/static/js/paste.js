@@ -5,7 +5,7 @@
 
   $textarea
     // removing whitespace because I couldn't figure out how to do it in Python
-    .val(code.trim())
+    .val(code.trim());
     // setting same height as the no-raw area
-    .css({height: editorHeight + 15});
+    // .css({height: editorHeight + 15});
 })(jQuery);

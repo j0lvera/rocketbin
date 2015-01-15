@@ -1,12 +1,10 @@
-/*
- * Buttons 
- */
-
+/* Buttons */
 %button-static {
 	display: inline-block;
 	padding: 0.418em 1em;
 	border: 0;
 	border-radius: $btn-roundness;
+	color: #fff;
 	text-decoration: none;
 	font-family: inherit;
 	font-weight: 400;
@@ -18,15 +16,19 @@
 	}
 }
 
+button,
+a.btn-default,
 .btn-default {
 	@extend %button-static;
+
+	color: #fff;
+
 	@include button($btn-default-bg, $btn-primary-text-color);
 }
 
 
-.btn-primary {
+.btn-ghost {
 	@extend .btn-default;
-	// @include button(transparent, $btn-primary-text-color);
 	@include button(transparent, #fff);
 	border: 3px solid #fff;
 	opacity: 0.8;

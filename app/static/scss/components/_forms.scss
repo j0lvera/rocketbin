@@ -1,4 +1,15 @@
+%form-border-radius {
+	// border: 2px solid $field-border-color;	
+	border: none;
+	border-radius: 4px;
+}
+
+/* Forms */
 .form {
+	background-color: #eee;
+	color: lighten($text-color, 20%);
+	border-radius: 4px;
+
 	.field-group {
 		margin-bottom: 1em;
 
@@ -21,10 +32,19 @@
 			display: inline-block;	
 		}
 
+		input[type="text"],
+		input[type="password"],
+		input[type="number"],
+		textarea {
+			width: 100%;	
+		}
+
 		input:not([class^="btn"]),
 		textarea {
-			border: 1px solid $field-border-color;	
+			@extend %form-border-radius;
+
 			padding: 0.618em;
+			color: lighten($text-color, 10%);
 
 			&:focus,
 			&:hover {
@@ -65,8 +85,8 @@
 
 	fieldset {
 		margin-bottom: 1em;
-		border: 1px solid $field-border-color;
 		padding: 1em;
+		border: none;
 
 		legend {
 			padding: 0 0.618em;

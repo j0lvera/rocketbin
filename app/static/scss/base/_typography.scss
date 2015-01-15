@@ -1,5 +1,7 @@
 /*
- * Type.css
+ * Type.scss
+ *
+ * https://github.com/thinkxl/type
  */
 
 /* Modular Scale 
@@ -80,29 +82,13 @@ h4, h5, h6 {
 	font-size: 1.125#{$unit};
 }
 
-/*
- * Paragraph 
- */
-
+/* Paragraph */
 p {
 	margin-top: $base-margin-top;
-
-	@if $indented-paragraphs {
-		margin-bottom: 0;
-
-		& + p {
-			text-indent: 2em;
-			margin-top: 0;
-		}
-	} @else {
-		margin-bottom: $base-margin-bottom;
-	}
+	margin-bottom: $base-margin-bottom;
 }
 
-/*
- * Anchor links 
- */
-
+/* Anchor links */
 a {
 	color: $link-color;
 
@@ -111,12 +97,7 @@ a {
 	}
 }
 
-/*
- * Lists
- *
- * Most `ul` inside a `nav` element doesn't need the list styling
- */
-
+/* Lists */
 nav ul,
 nav ol {
 	list-style: none;
@@ -135,10 +116,7 @@ li > ol {
 	 margin-bottom: 0;
 }
 
-/*
- * Better styled `<hr>`
- */
-
+/* Better styled `<hr>` */
 hr {
 	position: relative;
 	margin: 1.5#{$unit} 0;
@@ -147,10 +125,7 @@ hr {
 	border-bottom: 1px solid #fff;
 }
 
-/*
- * Quotes 
-*/
-
+/* Quotes */
 blockquote {
 	padding-right: 5#{$unit};
 	padding-left: 1.25#{$unit};
