@@ -1,4 +1,4 @@
-## Rocketbin v0.1.1 
+## Rocketbin v0.1.3
 
 **An Open Source Flask Pastebin clone**
 
@@ -10,4 +10,3 @@ This is a list of stuff that needs to be added and are in my TODO list:
 - User management (login/register/profile/etc)
 - Paste expiration time
 - Documentation on how to install and run your own instance of Rocketbin
-- Use https://mongolab.com/

@@ -1,5 +1,12 @@
 ### HEAD
 
+### 0.1.3 (Jan 14, 2015)
+
+- Sass folder structure changed
+- Raw data set to fixed height
+- Fixed bug of `.linenos` showing wrong size
+- Style guide added at `/style-guide` route
+
 ### 0.1.2 (Jan 6, 2015)
 
 - Replaced Pymongo class `Connection` for `MongoClient`
