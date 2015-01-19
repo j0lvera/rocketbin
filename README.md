@@ -47,9 +47,6 @@ $ nano config.py
 After `nano config.py` you will see something like this:
 
 ```python
-# You will need to rename this file to `config.py`
-# example: `mv config.example.py config.py`
-
 import os
 
 DEBUG=True
@@ -68,9 +65,6 @@ del os
 And then you will have to enter your own settings like this example:
 
 ```python
-# You will need to rename this file to `config.py`
-# example: `mv config.example.py config.py`
-
 import os
 
 DEBUG=True
@@ -108,11 +102,11 @@ If you are having issues trying to install Rocketbin or have any question ping m
 FAQ
 ---
 
-## Why another Pastebin clone?
+**Why another Pastebin clone?**
 
 I just wanted to know how to make one, my goal is to learn Python and Flask, so I thought it was a good exercise. 
 
-## Why MongoDB and not SQLite?
+**Why MongoDB and not SQLite?**
 
 Because I&rsquo;m learning MongoDB. 
 
