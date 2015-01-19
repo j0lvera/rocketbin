@@ -88,7 +88,7 @@ MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD', '')
 del os
 ```
 
-**NOTE:** *In most cases when you are running the app in your computer (localhost) you won't need to enter `MONGODB_USERNAME` and `MONGODB_PASSWORD` so leaving them blank is ok.*
+**NOTE:** *In most cases when you are running the app in your computer (localhost) you won&rsquo;t need to enter `MONGODB_USERNAME` and `MONGODB_PASSWORD` so leaving them blank is ok.*
 
 ```bash
 # After editing the `config.py` file run the server
@@ -114,7 +114,7 @@ I just wanted to know how to make one, my goal is to learn Python and Flask, so 
 
 ## Why MongoDB and not SQLite?
 
-Because I'm learning MongoDB. 
+Because I&rsquo;m learning MongoDB. 
 
 License
 -------
