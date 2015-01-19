@@ -113,4 +113,4 @@ Because I&rsquo;m learning MongoDB.
 License
 -------
 
-The project is licensed under the GPL license.
+The project is licensed under the GPL v2 license.
