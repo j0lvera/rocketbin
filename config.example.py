@@ -5,6 +5,7 @@ import os
 
 DEBUG=True
 SECRET_KEY=os.getenv('SECRET_KEY', '<your secret key here>')
+SALT=os.getenv('SALT', '<your salt here>')
 
 MONGODB_HOSTNAME = os.getenv('MONGODB_HOST', 'localhost')
 MONGODB_NAME = os.getenv('MONGODB_DATABASE', '<your database name here>')
