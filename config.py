@@ -3,7 +3,7 @@
 
 import os
 
-DEBUG=True
+DEBUG=False
 SECRET_KEY=os.getenv('SECRET_KEY', '<your secret key here>')
 SALT=SECRET_KEY
 
