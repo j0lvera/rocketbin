@@ -18,7 +18,7 @@
     },
 
     init: function() {
-      s = this.settings;       
+      s = this.settings;
 
       // start app
       this.setDefaultOptions();
@@ -33,7 +33,7 @@
     },
 
     setKeybinding: function(keybinding) {
-      editor.setKeyboardHandler("ace/keyboard/" + keybinding);              
+      editor.setKeyboardHandler("ace/keyboard/" + keybinding);
       app.saveSetting("rocketbin-keybinding", keybinding);
     },
 
@@ -58,7 +58,7 @@
         enableSnippets: true,
         enableLiveAutocompletion: true,
         behavioursEnabled: true
-      });         
+      });
     },
 
     saveSetting: function(option, value) {
@@ -97,7 +97,7 @@
       app.setKeybinding(value);
       app.editorFocus();
     },
-    
+
     changeLang: function() {
       value = this.value;
       s.lang = value;
@@ -112,16 +112,16 @@
     },
 
     saveCode: function(e) {
-      e.preventDefault();           
+      e.preventDefault();
       var code = editor.getValue();
 
       if (code != '') {
         $.ajax({
           url: '/paste/save',
-          data: { 
-            code: code, 
-            lang: s.lang, 
-            theme: s.theme 
+          data: {
+            code: code,
+            lang: s.lang,
+            theme: s.theme
           },
           type: 'POST',
           success: function(data) {
@@ -133,7 +133,7 @@
           },
           error: function(data) {
             console.dir(data);
-            console.log("something happened");        
+            console.log("something happened");
           }
         });
       } else {

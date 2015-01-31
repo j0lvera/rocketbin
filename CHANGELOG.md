@@ -1,5 +1,9 @@
 ### HEAD
 
+### 0.1.4 (Jan 30, 2015)
+
+- Removed `paste.js`
+
 ### 0.1.3 (Jan 14, 2015)
 
 - Sass folder structure changed

@@ -18,13 +18,6 @@
 	{# <p><a class="btn-ghost" href="#"><i class="fa fa-link"></i> Raw data</a></p> #}
 
   <div class="code-raw">
-    <textarea class="code-raw-textarea">
-      {{ code_raw }}
-    </textarea>
+    <textarea class="code-raw-textarea">{{ code_raw|trim }}</textarea>
   </div> <!-- .code-raw -->
-{% endblock %}
-
-{% block scripts %}
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="{{ url_for('static', filename='js/paste.js') }}"></script>
 {% endblock %}

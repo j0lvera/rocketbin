@@ -61,11 +61,10 @@ def show_paste(id=id):
     lexer = get_lexer_by_name(paste['lang'], stripall=True)
     code_result = highlight(paste['code'], lexer, \
             HtmlFormatter(linenos=True))
-    code_raw = paste['code'] 
+    code_raw = paste['code']
     theme_file = 'css/' + paste['theme'] + '.css'
-    print theme_file
     return render_template('paste.html', code=code_result, \
-            code_raw=code_raw.strip(), id=id, theme_file=theme_file, \
+            code_raw=code_raw, id=id, theme_file=theme_file, \
             lang=paste['lang'])
 
 

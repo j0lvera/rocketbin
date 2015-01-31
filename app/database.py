@@ -20,6 +20,7 @@ pastes = db.pastes
 # {
 #     '_id': _id, 
 #     'author_id': author_id,
+#     'title': title,
 #     'code': code, 
 #     'lang': lang, 
 #     'theme': theme, 

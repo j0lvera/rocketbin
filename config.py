@@ -1,9 +1,6 @@
-# You will need to rename this file to `config.py`
-# example: `mv config.example.py config.py`
-
 import os
 
-DEBUG=False
+DEBUG=True
 SECRET_KEY=os.getenv('SECRET_KEY', '<your secret key here>')
 SALT=SECRET_KEY
 
