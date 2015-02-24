@@ -1,4 +1,4 @@
-Rocketbin v0.1.4
+Rocketbin v0.2.0
 ========
 
 Rocketbin is a very easy to use [Pastebin](http://pastebin.com/) clone.
