@@ -137,7 +137,8 @@
             code: code,
             lang: s.lang,
             theme: s.theme,
-            title: s.title,
+            // Make sure that the title is less than 60 chars
+            title: s.title.substring(0, 100),
             private: s.private 
           },
           type: 'POST',
