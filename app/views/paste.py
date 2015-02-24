@@ -13,7 +13,6 @@ from app.database import pastes
 
 mod = Blueprint('paste', __name__)
 
-# Custom filters
 def datetimeformat(value):
     past = arrow.get(value)
     return past.humanize() 
