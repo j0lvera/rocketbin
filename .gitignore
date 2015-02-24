@@ -6,3 +6,4 @@ instance
 *.swp
 *.sh
 *.pyc
+env/
