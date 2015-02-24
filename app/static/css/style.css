@@ -757,16 +757,30 @@ button, a.btn-default, a.btn-ghost, a.btn-small, a.btn-large, .btn-default, .btn
 
 /* Editor */
 #editor {
-  margin: 1em 0;
+  margin-bottom: 1em;
   width: 100%;
   height: 40em; }
 
 /* Options */
-.option {
+[class^="option-"] {
   display: inline-block;
   margin-right: 1em; }
-  .option:last-child {
+  [class^="option-"] input, [class^="option-"] select {
+    color: #333; }
+  [class^="option-"]:last-child {
     margin-right: 0; }
+
+/* Paste title */
+.option-title {
+  display: block;
+  margin: 1em 0; }
+  .option-title input {
+    width: 100%;
+    padding: 0.618em;
+    color: #333;
+    outline: none;
+    border: 6px solid #CCCCCC;
+    border-radius: 4px; }
 
 /* Footer */
 .tilt-container {
@@ -820,6 +834,10 @@ section {
   margin-bottom: 6em; }
 
 /* Code Results */
+.code-result {
+  width: 120%;
+  margin-left: -10%; }
+
 .code-raw-textarea {
   height: 24em; }
 

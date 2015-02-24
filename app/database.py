@@ -16,13 +16,15 @@ if app.config['MONGODB_USERNAME']:
     )
 
 pastes = db.pastes
+users = db.users
 
 # {
 #     '_id': _id, 
 #     'author_id': author_id,
 #     'title': title,
+#     'private': false,
 #     'code': code, 
 #     'lang': lang, 
 #     'theme': theme, 
-#     'created_at':created_at
+#     'created_at': created_at
 # }

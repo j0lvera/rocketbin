@@ -6,9 +6,11 @@
   app = {
     settings: {
       // Defaults
+      title: '',
       lang: localStorage.getItem("rocketbin-language") || "html",
       theme: "github",
       keybinding: localStorage.getItem("rocketbin-keybinding") || "keybinding",
+      private: '',
       // UI
       optionLanguage: d.getElementById('language'),
       optionTheme: d.getElementById('theme'),
@@ -53,7 +55,7 @@
       this.setKeybinding(s.keybinding);
 
       editor.setOptions({
-        // wrap: true,
+        wrap: true,
         enableBasicAutocompletion: true,
         enableSnippets: true,
         enableLiveAutocompletion: true,
@@ -72,7 +74,7 @@
         editor.setOption("enableEmmet", true);
       }
 
-      editor.getSession().setMode("ace/mode/" + lang);
+      editor.getSession().setMode("ace/mode/" + lang.toLowerCase());
       app.editorFocus();
       app.saveSetting("rocketbin-language", lang);
     },
@@ -92,20 +94,20 @@
     },
 
     changeKeybinding: function() {
-      value = this.value;
+      var value = this.value;
       s.keybinding = value;
       app.setKeybinding(value);
       app.editorFocus();
     },
 
     changeLang: function() {
-      value = this.value;
+      var value = this.value;
       s.lang = value;
       app.setLang(value);
     },
 
     changeTheme: function() {
-      value = this.value;
+      var value = this.value;
       s.theme = value;
       app.setTheme(value);
       app.editorFocus();
@@ -115,13 +117,28 @@
       e.preventDefault();
       var code = editor.getValue();
 
+      // Fixes
+      s.title = document.getElementById('title').value;
+      s.private = document.getElementById('private').checked;
+
+      // Ace.js uses Coffee instead of CoffeeScript , so we fix it here
+      // to make the server be able to read it correctly.
+      if (s.lang == 'Coffee') {
+        s.lang = 'CoffeeScript';
+      }
+
+      console.log(s.title);
+      console.log(s.private);
+
       if (code != '') {
         $.ajax({
           url: '/paste/save',
           data: {
             code: code,
             lang: s.lang,
-            theme: s.theme
+            theme: s.theme,
+            title: s.title,
+            private: s.private 
           },
           type: 'POST',
           success: function(data) {
@@ -132,8 +149,8 @@
             }
           },
           error: function(data) {
-            console.dir(data);
-            console.log("something happened");
+            console.log(data);
+            console.log("Something is wrong");
           }
         });
       } else {

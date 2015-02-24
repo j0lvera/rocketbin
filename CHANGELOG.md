@@ -1,5 +1,17 @@
 ### HEAD
 
+### Unreleased
+
+- Added `admin` view to be able to delete pastes
+
+### 0.2.0 (Feb 17, 2015)
+
+- Switched to Gulp, thanks [@BillCriswell](http://twitter.com/bill)
+- Added Bash support
+- Added feature to add Name to pastes
+- Added feature to avoid list the pastes in the public list (Private Option)
+- Added [Style Guide]('http://rocketb.in/style-guide')
+
 ### 0.1.4 (Jan 30, 2015)
 
 - Removed `paste.js`

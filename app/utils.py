@@ -4,6 +4,9 @@ from hashids import Hashids
 
 
 SALT = app.config['SALT']
+SUPPORTED_LANGUAGES = ['HTML', 'CSS', 'Sass', 'Less', 'JavaScript', 
+                       'CoffeeScript', 'Python', 'Ruby', 'PHP', 
+                       'Bash', 'sh']
 
 def gen_new_id(model):
     if model.find({}):
