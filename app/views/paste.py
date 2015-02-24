@@ -2,7 +2,6 @@ import os
 from datetime import datetime
 from flask import Flask, request, render_template, redirect, url_for, Blueprint, \
         abort
-# from jinja2 import Environment
 import jinja2
 import json
 import arrow 
