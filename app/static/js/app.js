@@ -149,9 +149,15 @@
               location.href = location.href + 'paste/' + status._id;
             }
           },
-          error: function(data) {
-            console.log(data);
-            console.log("Something is wrong");
+          error: function(xhr, textStatus) {
+            /*
+             * Need to get the error msg from the server to send it back
+             * and render the correct 500.html template
+             */
+
+            if (xhr.status === 500) {
+              location.href = location.href + '500/';
+            }
           }
         });
       } else {

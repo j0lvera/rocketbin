@@ -3,13 +3,13 @@
 {% block title %}Paste {{ id }}{% endblock %}
 
 {% block head %}
-	<link href="{{ url_for('static', filename=theme_file) }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/github.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
   <h3 class="heading">{{ title }}</h3>
 
-	<p class="meta">Created {{ created_at|datetimeformat }} &bullet; Language: <strong>{{ lang }}</strong></p>
+	<p class="meta">By: <strong>{{ created_by }}</strong> &bullet; {{ created_at|datetimeformat }} &bullet; Language: <strong>{{ lang }}</strong></p>
 
   <div class="code-result">{{ code|safe }}</div> <!-- .code-result -->
 

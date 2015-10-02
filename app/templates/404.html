@@ -1,60 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Page Not Found</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+{% extends "layout/base.html" %}
 
-        * {
-            line-height: 1.2;
-            margin: 0;
-        }
+{% block title %}Paste {{ id }}{% endblock %}
 
-        html {
-            color: #888;
-            display: table;
-            font-family: sans-serif;
-            height: 100%;
-            text-align: center;
-            width: 100%;
-        }
+{% block head %}
+	<link href="{{ url_for('static', filename=theme_file) }}" rel="stylesheet">
+{% endblock %}
 
-        body {
-            display: table-cell;
-            vertical-align: middle;
-            margin: 2em auto;
-        }
+{% block content %}
+  <h3 class="heading">Ah! This page doesn't exist</h3>
 
-        h1 {
-            color: #555;
-            font-size: 2em;
-            font-weight: 400;
-        }
+  <p>Not to worry. Here is a link to the <a href="{{ url_for('home.index') }}">homepage</a>.</p>
 
-        p {
-            margin: 0 auto;
-            width: 280px;
-        }
+  <img class="centered" src="http://gifs.joelglovier.com/crying/raining.gif" alt="" />
+{% endblock %}
 
-        @media only screen and (max-width: 280px) {
-
-            body, p {
-                width: 95%;
-            }
-
-            h1 {
-                font-size: 1.5em;
-                margin: 0 0 0.3em;
-            }
-
-        }
-
-    </style>
-</head>
-<body>
-    <h1>Page Not Found</h1>
-    <p>Sorry, but the page you were trying to view does not exist.</p>
-</body>
-</html>
-<!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->
+{% block scripts %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/paste.js') }}"></script>
+{% endblock %}
