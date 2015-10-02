@@ -1,8 +1,10 @@
 import os
 
-DEBUG=False
+DEBUG=True
 SECRET_KEY=os.getenv('SECRET_KEY', '<your secret key here>')
 SALT=os.getenv('SALT', '<your salt here>')
+
+SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URI', '<your database path here>')
 
 MONGODB_HOSTNAME = os.getenv('MONGODB_HOST', 'localhost')
 MONGODB_NAME = os.getenv('MONGODB_DATABASE', '<your database name here>')
