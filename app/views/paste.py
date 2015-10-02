@@ -81,7 +81,8 @@ def show_paste(id=id):
 @mod.route('/pastes')
 def show_all():
     ## TODO: Fix to show in `False` instead of `"false"`
-    latest_pastes = db.session.query(Paste).filter(Paste.private=='false').limit(25)
+    latest_pastes = Paste.query.filter(Paste.private=='false')\
+            .order_by(Paste.id.desc()).limit(25)
 
     # MongoDB
     # latest_pastes = pastes.find({'private': 'false'}).limit(25).sort('created_at', -1)

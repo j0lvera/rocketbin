@@ -5,7 +5,7 @@ from hashids import Hashids
 
 
 SALT = app.config['SALT']
-SUPPORTED_LANGUAGES = ['HTML', 'CSS', 'Sass', 'Less', 'JavaScript', 
+SUPPORTED_LANGUAGES = ['HTML', 'CSS', 'Sass', 'SCSS', 'Less', 'JavaScript', 
                        'CoffeeScript', 'Python', 'Ruby', 'PHP', 
                        'Bash', 'sh']
 
