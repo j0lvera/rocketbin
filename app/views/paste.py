@@ -74,9 +74,9 @@ def show_paste(id=id):
 
     lexer = get_lexer_by_name(paste.lang, stripall=True)
     code_result = highlight(paste.code, lexer, HtmlFormatter(linenos=True))
-    return render_template('paste.html', code=code_result, 
-            code_raw=paste.code, id=id, lang=paste.lang, 
-            created_at=paste.created_at, title=title)
+    return render_template('paste.html', code=code_result, code_raw=paste.code, 
+            id=id, lang=paste.lang, created_at=paste.created_at, title=title,
+            created_by=paste.created_by)
 
 @mod.route('/pastes')
 def show_all():

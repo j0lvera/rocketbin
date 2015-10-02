@@ -9,7 +9,7 @@
 {% block content %}
   <h3 class="heading">{{ title }}</h3>
 
-	<p class="meta">Created {{ created_at|datetimeformat }} &bullet; Language: <strong>{{ lang }}</strong></p>
+	<p class="meta">By: <strong>{{ created_by }}</strong> &bullet; {{ created_at|datetimeformat }} &bullet; Language: <strong>{{ lang }}</strong></p>
 
   <div class="code-result">{{ code|safe }}</div> <!-- .code-result -->
 
