@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block head %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <title>{% block title %}{% endblock %} - Rocketbin</title>
+  {% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-5">
+          <h1 class="site-title"><a href="/">Rocketbin</a></h1>
+        </div> <!-- .col-1-2 -->
+
+        <div class="col-7">
+          <nav class="site-nav wb-menu-bar">
+            <ul class="wb-menu-list">
+              <li class="wb-menu-item">Menu item</li>
+            </ul>
+          </nav> <!-- .site-nav -->
+        </div> <!-- .col-1-2 -->
+      </div> <!-- .row -->
+    </div> <!-- .container -->
+  </header>
+
+  <div id="app">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div> <!-- .container -->
+  </div>
+
+{% block footer %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block title %}Create a new paste{% endblock %}
+
+{% block content %}
+<form action="/save" method="POST">
+  <div class="options">
+    <div class="option-languages">
+      <label for="syntax">Syntax</label>
+      <select id="syntax" name="syntax">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="sass">Sass</option>
+        <option value="scss">SCSS</option>
+        <option value="less">Less</option>
+        <option value="javascript">JavaScript</option>
+        <option value="coffee">CoffeeScript</option>
+        <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
+        <option value="php">PHP</option>
+      </select>
+    </div> <!-- .option-languages -->
+
+    <div class="option-keybinding">
+      <label for="keybinding">Do you fly?</label>
+      <select id="keybinding" name="keybinding">
+        <option value="keybinding">None</option>
+        <option value="vim">Vim</option>
+        <option value="emacs">Emacs</option>
+      </select>
+    </div> <!-- .option-keybinding -->
+
+    <div class="option-private">
+      <label for="private">Private?</label>
+      <input id="private" name="private" type="checkbox">
+    </div> <!-- .option-private -->
+
+    <div class="option-title">
+      <input id="title" name="title" class="paste-title-input" type="text" placeholder="Paste title" maxlength="100">
+    </div> <!-- .option-title -->
+  </div> <!-- .options -->
+
+  <div style="display: block; float: left;">
+    <div id="editor"></div>
+    <input id="code" type="hidden"></input>
+  </div>
+
+  <div style="display: block; float: left; margin-top: 27em;">
+    <button type="submit">Create</button>
+  </div>
+</form>
+
+<!-- <script src="/static/js/vendors/ace/ace.js"></script> -->
+<!-- <script src="/static/js/vendors/ace/theme-github.js"></script> -->
+<!-- <script src="/static/js/vendors/ace/ext-language_tools.js"></script> -->
+<!-- <script src="/static/js/vendors/ace/ext-emmet.js"></script> -->
+<!-- <script src="/static/js/vendors/ace/mode-javascript.js"></script> -->
+<script src="/static/js/bundle.js"></script>
+{% endblock %}
